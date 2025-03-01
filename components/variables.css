@@ -1,0 +1,36 @@
+:root {
+    /* Main Colors */
+    --primary: #101827;    /* Albastru închis - 25% usage */
+    --accent: #C38264;     /* Cupru - 10% usage */
+    --accent2: #8B5E47;    /* Cupru închis pentru hover */
+    --neutral: #A8A29F;    /* Gri - 10% usage */
+    --background: #F3F4F5; /* Gri deschis - 55% usage */
+    
+    /* Derived Colors */
+    --text-dark: var(--primary);
+    --text-medium: rgba(16, 24, 39, 0.7);
+    --white: #FFFFFF;
+    --shadow: rgba(16, 24, 39, 0.1);
+    
+    /* Layout */
+    --section-padding: 44px;
+    --max-width: 1400px;
+    
+    /* Typography */
+    --heading-font: -apple-system, 'SF Pro Display', 'SF Pro Text', sans-serif;
+    --body-font: 'Inter', sans-serif;
+    
+    /* Transitions */
+    --transition-fast: 0.3s ease;
+    --transition-medium: 0.6s ease;
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
+    
+    /* Border Radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+} 

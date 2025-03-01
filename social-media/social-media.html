@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Social Media | Câmpina Residence</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>Social Media - Campina Residence</title>
+    <link rel="stylesheet" href="../components/variables.css">
+    <link rel="stylesheet" href="../components/navbar.css">
     <link rel="stylesheet" href="social-media.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
+    <!-- Navbar -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">
@@ -16,13 +19,6 @@
                     <img src="../images/logo.jpg" alt="Campina Residence Logo" />
                 </a>
             </div>
-            <button class="mobile-menu-button">
-                <div class="menu-icon">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </button>
             <div class="nav-links">
                 <a href="../home/home.html">Acasă</a>
                 <a href="../finishes/finishes.html">Finisaje</a>
@@ -31,9 +27,16 @@
                 <a href="../contact/contact.html">Contact</a>
                 <a href="social-media.html" class="active">Social Media</a>
             </div>
+            <button class="mobile-menu-button">
+                <div class="menu-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
         </div>
     </nav>
-
+    
     <header class="social-header">
         <div class="header-container">
             <div class="header-content" data-aos="fade-right" data-aos-duration="1000">
@@ -305,6 +308,7 @@
     <script>
         AOS.init();
     </script>
+    <script src="../components/navbar.js"></script>
     <script src="../js/shared.js"></script>
     <script src="social-media.js"></script>
 </body>
