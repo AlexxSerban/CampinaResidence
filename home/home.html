@@ -1,9 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ro">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Campina Residence</title>
+    <link rel="stylesheet" href="../components/variables.css">
+    <link rel="stylesheet" href="../components/navbar.css">
+    <link rel="stylesheet" href="../components/footer/footer.css">
     <link rel="stylesheet" href="home.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
@@ -13,23 +16,8 @@
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   </head>
   <body>
-    <nav class="navbar">
-      <div class="nav-container">
-        <div class="logo">
-          <a href="home.html">
-            <img src="../images/logo.jpg" alt="Campina Residence Logo" />
-          </a>
-        </div>
-        <div class="nav-links">
-          <a href="home.html" class="active">Acasă</a>
-          <a href="../finishes/finishes.html">Finisaje</a>
-          <a href="../apartments/apartments.html">Apartamente</a>
-          <a href="../interior-design/interior-design.html">Design Interior</a>
-          <a href="../contact/contact.html">Contact</a>
-          <a href="../social-media/social-media.html">Social Media</a>
-        </div>
-      </div>
-    </nav>
+    <!-- Include navbar component -->
+    <div id="navbar-placeholder"></div>
 
     <header class="main-header">
       <div class="hero-background">
@@ -762,22 +750,9 @@
       </div>
     </section>
 
-    <footer class="main-footer">
-        <div class="footer-container">
-            <div class="footer-content">
-                <img src="../images/logo.jpg" alt="Campina Residence Logo" class="footer-logo">
-                <p class="copyright">© 2025 Campina Residence Toate drepturile rezervate. Toate materialele publicate in acest site sunt cu titlu informativ si sunt supuse modificarilor fara notificari prealabile si nu reprezinta o oferta comerciala concreta.</p>
-                <div class="anpc-links">
-                    <a href="https://reclamatiisal.anpc.ro/" target="_blank" rel="noopener noreferrer">
-                        <img src="../images/solutionarea alternativa.png" alt="Soluționare alternativă ANPC">
-                    </a>
-                    <a href="https://ec.europa.eu/consumers/odr/main/index.cfm?event=main.home2.show&lng=RO" target="_blank" rel="noopener noreferrer">
-                        <img src="../images/solutionarea online.png" alt="Soluționare online ANPC">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <!-- Include footer component -->
+    <div id="footer-placeholder"></div>
+
     <!-- Third party scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
@@ -787,17 +762,57 @@
       defer
     ></script>
 
-    <!-- Our scripts -->
-    <script src="../js/shared.js"></script>
-    <script src="home.js"></script>
+    <!-- Initialize AOS -->
     <script>
         AOS.init({
-            duration: 1000,
-            once: false,
-            mirror: true,
-            offset: 100,
-            easing: 'ease-out-cubic'
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
         });
+    </script>
+
+    <!-- Load and initialize components -->
+    <script src="../components/navbar.js"></script>
+    <script src="../components/footer/footer.js"></script>
+    <script>
+        // Load navbar
+        fetch('../components/navbar.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
+                if (typeof initializeNavbar === 'function') {
+                    initializeNavbar();
+                }
+            })
+            .catch(error => {
+                console.error('Error loading navbar:', error);
+            });
+
+        // Load footer
+        fetch('../components/footer/footer.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+                if (typeof initializeFooter === 'function') {
+                    initializeFooter();
+                }
+            })
+            .catch(error => {
+                console.error('Error loading footer:', error);
+                document.getElementById('footer-placeholder').innerHTML = 
+                    '<div style="text-align: center; padding: 20px; color: red;">Eroare la încărcarea footer-ului. Vă rugăm reîncărcați pagina.</div>';
+            });
     </script>
   </body>
 </html>

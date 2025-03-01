@@ -1,5 +1,5 @@
 // Mobile menu functionality
-document.addEventListener('DOMContentLoaded', function() {
+function initializeMobileMenu() {
     const mobileMenuButton = document.querySelector('.mobile-menu-button');
     const navLinks = document.querySelector('.nav-links');
     
@@ -18,16 +18,31 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+}
 
+document.addEventListener('DOMContentLoaded', function() {
     // Set active link based on current page
-    const currentPage = window.location.pathname;
+    const currentPath = window.location.pathname;
     const links = document.querySelectorAll('.nav-links a');
     
     links.forEach(link => {
-        if (link.getAttribute('href').includes(currentPage)) {
+        // Remove any existing active classes first
+        link.classList.remove('active');
+        
+        const linkPath = link.getAttribute('href');
+        const currentPageName = currentPath.split('/').pop();
+        const linkPageName = linkPath.split('/').pop();
+        
+        if (currentPageName === linkPageName) {
             link.classList.add('active');
-        } else {
-            link.classList.remove('active');
         }
     });
-}); 
+
+    // Initialize mobile menu
+    initializeMobileMenu();
+});
+
+// Export the initialization functions for use after dynamic loading
+window.initializeNavbar = function() {
+    initializeMobileMenu();
+} 
