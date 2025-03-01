@@ -203,25 +203,57 @@ async function loadApartmentDetails() {
         });
 
         // Setează imaginea schiței apartamentului
+        console.log('Checking floor plan for apartment:', apartment);
         if (apartment.schitaApartament) {
             const floorPlanImg = document.querySelector('.floor-plan img');
+            if (!floorPlanImg) {
+                console.error('Floor plan image element not found in DOM');
+                return;
+            }
+            
             // Ajustăm calea relativă pentru a se potrivi cu structura de fișiere
             const adjustedPath = apartment.schitaApartament.replace('../', '../../');
-            console.log('Floor plan path:', apartment.schitaApartament);
+            console.log('Original floor plan path:', apartment.schitaApartament);
             console.log('Adjusted floor plan path:', adjustedPath);
-            floorPlanImg.src = adjustedPath;
+            
+            // Verificăm dacă imaginea există înainte de a o seta
+            fetch(adjustedPath)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    console.log('Floor plan image exists at path:', adjustedPath);
+                    floorPlanImg.src = adjustedPath;
+                })
+                .catch(error => {
+                    console.error('Error checking floor plan image:', error);
+                });
+            
             floorPlanImg.alt = `Schița Apartament ${apartment.nrCam} Camere - Corp ${apartment.cladire}`;
             
             // Adăugăm un handler pentru erori la încărcarea imaginii
             floorPlanImg.onerror = () => {
                 console.error('Failed to load floor plan image:', adjustedPath);
+                // Încercăm să afișăm o imagine placeholder sau un mesaj de eroare
+                floorPlanImg.style.display = 'none';
+                const errorMessage = document.createElement('p');
+                errorMessage.textContent = 'Schița apartamentului nu este disponibilă momentan.';
+                floorPlanImg.parentNode.appendChild(errorMessage);
             };
             
             floorPlanImg.onload = () => {
                 console.log('Floor plan image loaded successfully');
+                floorPlanImg.style.display = 'block';
             };
         } else {
             console.log('No floor plan image path found for this apartment');
+            const floorPlanImg = document.querySelector('.floor-plan img');
+            if (floorPlanImg) {
+                floorPlanImg.style.display = 'none';
+                const errorMessage = document.createElement('p');
+                errorMessage.textContent = 'Schița apartamentului nu este disponibilă pentru acest apartament.';
+                floorPlanImg.parentNode.appendChild(errorMessage);
+            }
         }
 
     } catch (error) {

@@ -4,6 +4,14 @@
     box-sizing: border-box;
 }
 
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+}
+
 :root {
     /* Main Colors - New Color Scheme */
     --primary: #101827;    /* Albastru închis - 25% usage */
@@ -213,6 +221,38 @@ footer {
 
     section {
         padding: 50px 20px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .contact-container,
+    .advantages-container,
+    .about-container,
+    .why-choose-container,
+    .process-container,
+    .facilities-container,
+    .faq-container {
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    .hero-content,
+    .contact-grid,
+    .advantages-grid,
+    .about-content,
+    .comparison-grid,
+    .process-cards,
+    .facilities-grid {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
     }
 }
 

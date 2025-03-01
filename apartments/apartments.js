@@ -119,8 +119,8 @@ export const apartmentsC1 = {
             id: "SP_COM_1",
             etaj: "P",
             cladire: "C1",
-            suprafataConstruita: 182.33,
-            suprafataUtilaFaraTerasa: 164.10,
+            suprafataConstruita: 182,
+            suprafataUtilaFaraTerasa: 164,
             suprafataTerasa: 0.00,
             pozitie: "N-E",
             pret: {
@@ -187,9 +187,9 @@ export const apartmentsC1 = {
             etaj: 1,
             cladire: "C1",
             nrCam: 2,
-            suprafataConstruita: 92.62,
-            suprafataUtilaFaraTerasa: 74.80,
-            suprafataTerasa: 5.50,
+            suprafataConstruita: 92,
+            suprafataUtilaFaraTerasa: 74,
+            suprafataTerasa: 5.5,
             pozitie: "E",
             schitaApartament: "../images/sketchApartment/Corp1Et1Ap03Cam2.jpg",
             pret: {
@@ -204,9 +204,9 @@ export const apartmentsC1 = {
             etaj: 1,
             cladire: "C1",
             nrCam: 2,
-            suprafataConstruita: 95.88,
-            suprafataUtilaFaraTerasa: 74.30,
-            suprafataTerasa: 9.00,
+            suprafataConstruita: 95,
+            suprafataUtilaFaraTerasa: 74,
+            suprafataTerasa: 9,
             pozitie: "E",
             schitaApartament: "../images/sketchApartment/Corp1Et1Ap04Cam2.jpg",
             pret: {
@@ -221,9 +221,9 @@ export const apartmentsC1 = {
             etaj: 1,
             cladire: "C1",
             nrCam: 2,
-            suprafataConstruita: 98.89,
-            suprafataUtilaFaraTerasa: 73.40,
-            suprafataTerasa: 9.10,
+            suprafataConstruita: 98,
+            suprafataUtilaFaraTerasa: 73,
+            suprafataTerasa: 9,
             pozitie: "S-E",
             schitaApartament: "../images/sketchApartment/Corp1Et1Ap05Cam2.jpg",
             pret: {
@@ -238,9 +238,9 @@ export const apartmentsC1 = {
             etaj: 1,
             cladire: "C1",
             nrCam: 2,
-            suprafataConstruita: 92.38,
-            suprafataUtilaFaraTerasa: 67.00,
-            suprafataTerasa: 9.10,
+            suprafataConstruita: 92,
+            suprafataUtilaFaraTerasa: 67,
+            suprafataTerasa: 9,
             pozitie: "S-V",
             schitaApartament: "../images/sketchApartment/Corp1Et1Ap06Cam2.jpg",
             pret: {
@@ -248,16 +248,16 @@ export const apartmentsC1 = {
                 tva: 9,
                 final: 125200
             },
-            disponibilitate: "VANDUT/RE"
+            disponibilitate: "VANDUT"
         },
         AP_7: {
             id: "AP_7",
             etaj: 1,
             cladire: "C1",
             nrCam: 2,
-            suprafataConstruita: 82.49,
-            suprafataUtilaFaraTerasa: 61.60,
-            suprafataTerasa: 8.70,
+            suprafataConstruita: 82,
+            suprafataUtilaFaraTerasa: 61,
+            suprafataTerasa: 8.7,
             pozitie: "V",
             schitaApartament: "../images/sketchApartment/Corp1Et1Ap07Cam2.jpg",
             pret: {
@@ -265,81 +265,86 @@ export const apartmentsC1 = {
                 tva: 9,
                 final: 115400
             },
-            disponibilitate: "VANDUT/RE"
+            disponibilitate: "VANDUT"
         },
         AP_10: {
             id: "AP_10",
             etaj: 2,
             cladire: "C1",
             nrCam: 2,
-            suprafataConstruita: 92.67,
-            suprafataUtilaFaraTerasa: 74.80,
-            suprafataTerasa: 5.90,
+            suprafataConstruita: 92,
+            suprafataUtilaFaraTerasa: 74,
+            suprafataTerasa: 5.9,
             pozitie: "E",
+            schitaApartament: "../images/sketchApartment/Corp1Et2Ap10Cam2.jpg",
             pret: {
                 standard: 128612,
                 tva: 19,
                 final: 153000
             },
-            disponibilitate: "VANDUT/RE"
+            disponibilitate: "VANDUT"
         },
         AP_11: {
             id: "AP_11",
             etaj: 2,
             cladire: "C1",
             nrCam: 2,
-            suprafataConstruita: 95.86,
-            suprafataUtilaFaraTerasa: 74.30,
-            suprafataTerasa: 9.00,
+            suprafataConstruita: 95,
+            suprafataUtilaFaraTerasa: 74,
+            suprafataTerasa: 9,
             pozitie: "E",
+            schitaApartament: "../images/sketchApartment/Corp1Et2Ap11Cam2.jpg",
             pret: {
                 standard: 130515,
                 tva: 19,
                 final: 155300
             },
-            disponibilitate: "VANDUT/RE"
+            disponibilitate: "VANDUT"
         },
         AP_12: {
             id: "AP_12",
             etaj: 2,
             cladire: "C1",
             nrCam: 2,
-            suprafataConstruita: 98.89,
-            suprafataUtilaFaraTerasa: 73.40,
-            suprafataTerasa: 9.10,
+            suprafataConstruita: 98,
+            suprafataUtilaFaraTerasa: 73,
+            suprafataTerasa: 9,
             pozitie: "S-E",
+            schitaApartament: "../images/sketchApartment/Corp1Et2Ap12Cam2.jpg",
             pret: {
                 standard: 129118,
                 tva: 19,
                 final: 153700
             },
-            disponibilitate: "VANDUT/RE"
+            disponibilitate: "VANDUT"
         },
         AP_13: {
             id: "AP_13",
             etaj: 2,
             cladire: "C1",
             nrCam: 2,
-            suprafataConstruita: 92.38,
-            suprafataUtilaFaraTerasa: 67.00,
-            suprafataTerasa: 9.10,
+            suprafataConstruita: 92,
+            suprafataUtilaFaraTerasa: 67,
+            suprafataTerasa: 9,
             pozitie: "S-V",
+            schitaApartament: "../images/sketchApartment/Corp1Et2Ap13Cam2.jpg",
             pret: {
                 standard: 118558,
                 tva: 9,
                 final: 129200
             },
-            disponibilitate: "VANDUT/RE"
+            disponibilitate: "VANDUT"
         },
         AP_14: {
             id: "AP_14",
             etaj: 2,
             cladire: "C1",
             nrCam: 2,
-            suprafataConstruita: 82.56,
-            suprafataUtilaFaraTerasa: 59.2,
+            suprafataConstruita: 82,
+            suprafataUtilaFaraTerasa: 59,
             suprafataTerasa: 9.7,
             pozitie: "V",
+            schitaApartament: "../images/sketchApartment/Corp1Et2Ap14Cam2.jpg",
             pret: {
                 standard: 0,
                 tva: 9,
@@ -356,8 +361,8 @@ export const apartmentsC1 = {
             etaj: 1,
             cladire: "C1",
             nrCam: 3,
-            suprafataConstruita: 125.06,
-            suprafataUtilaFaraTerasa: 96.10,
+            suprafataConstruita: 125,
+            suprafataUtilaFaraTerasa: 96,
             suprafataTerasa: 10,
             pozitie: "N-E",
             schitaApartament: "../images/sketchApartment/Corp1Et1Ap02Cam3.jpg",
@@ -373,10 +378,11 @@ export const apartmentsC1 = {
             etaj: 2,
             cladire: "C1",
             nrCam: 3,
-            suprafataConstruita: 125.06,
-            suprafataUtilaFaraTerasa: 92.60,
+            suprafataConstruita: 125,
+            suprafataUtilaFaraTerasa: 92,
             suprafataTerasa: 13.00,
             pozitie: "N-E",
+            schitaApartament: "../images/sketchApartment/Corp1Et2Ap09Cam3.jpg",
             pret: {
                 standard: 164230,
                 tva: 19,
@@ -393,27 +399,28 @@ export const apartmentsC1 = {
             etaj: 1,
             cladire: "C1",
             nrCam: 4,
-            suprafataConstruita: 147.89,
-            suprafataUtilaFaraTerasa: 119.70,
-            suprafataTerasa: 5.50,
-            pozitie: "N",
+            suprafataConstruita: 131,
+            suprafataUtilaFaraTerasa: 102,
+            suprafataTerasa: 8.4,
+            pozitie: "N-V",
             schitaApartament: "../images/sketchApartment/Corp1Et1Ap01Cam4.jpg",
             pret: {
-                standard: 197815,
+                standard: 170879,
                 tva: 19,
-                final: 235400
+                final: 203300
             },
-            disponibilitate: "DISPONIBIL"
+            disponibilitate: "VANDUT"
         },
         AP_8: {
             id: "AP_8",
             etaj: 2,
             cladire: "C1",
             nrCam: 4,
-            suprafataConstruita: 131.25,
-            suprafataUtilaFaraTerasa: 102.5,
+            suprafataConstruita: 131,
+            suprafataUtilaFaraTerasa: 102,
             suprafataTerasa: 8.4,
             pozitie: "N-V",
+            schitaApartament: "../images/sketchApartment/Corp1Et2Ap08Cam4.jpg",
             pret: {
                 standard: 176055,
                 tva: 19,
@@ -432,8 +439,8 @@ export const apartmentsC2 = {
             id: "GARAJ_1",
             etaj: "",
             cladire: "C2",
-            suprafataConstruita: 16.50,
-            suprafataUtilaFaraTerasa: 16.50,
+            suprafataConstruita: 16,
+            suprafataUtilaFaraTerasa: 16,
             suprafataTerasa: 0.00,
             pozitie: "E",
             pret: {
@@ -606,43 +613,45 @@ export const apartmentsC2 = {
             etaj: 1,
             cladire: "C2",
             nrCam: 1,
-            suprafataConstruita: 58.89,
-            suprafataUtilaFaraTerasa: 46.70,
-            suprafataTerasa: 0.00,
-            pozitie: "S",
+            suprafataConstruita: 56,
+            suprafataUtilaFaraTerasa: 41,
+            suprafataTerasa: 4.4,
+            pozitie: "V",
             schitaApartament: "../images/sketchApartment/Corp2Et1Ap06Cam1.jpg",
             pret: {
-                standard: 79412,
+                standard: 0,
                 tva: 19,
-                final: 94500
+                final: 0
             },
-            disponibilitate: "DISPONIBIL"
+            disponibilitate: "VANDUT"
         },
         AP_12: {
             id: "AP_12",
             etaj: 2,
             cladire: "C2",
             nrCam: 1,
-            suprafataConstruita: 55.87,
-            suprafataUtilaFaraTerasa: 41.70,
-            suprafataTerasa: 3.90,
+            suprafataConstruita: 55,
+            suprafataUtilaFaraTerasa: 41,
+            suprafataTerasa: 3.9,
             pozitie: "V",
+            schitaApartament: "../images/sketchApartment/Corp2Et2Ap12Cam1.jpg",
             pret: {
                 standard: 71320,
                 tva: 9,
                 final: 77700
             },
-            disponibilitate: ""
+            disponibilitate: "DISPONIBIL"
         },
         AP_18: {
             id: "AP_18",
             etaj: 3,
             cladire: "C2",
             nrCam: 1,
-            suprafataConstruita: 55.87,
-            suprafataUtilaFaraTerasa: 41.70,
-            suprafataTerasa: 3.90,
+            suprafataConstruita: 55,
+            suprafataUtilaFaraTerasa: 41,
+            suprafataTerasa: 3.9,
             pozitie: "V",
+            schitaApartament: "../images/sketchApartment/Corp2Et3Ap18Cam1.jpg",
             pret: {
                 standard: 0,
                 tva: 9,
@@ -659,15 +668,15 @@ export const apartmentsC2 = {
             etaj: 1,
             cladire: "C2",
             nrCam: 2,
-            suprafataConstruita: 92.62,
-            suprafataUtilaFaraTerasa: 74.80,
-            suprafataTerasa: 5.50,
-            pozitie: "N-E",
+            suprafataConstruita: 75,
+            suprafataUtilaFaraTerasa: 57,
+            suprafataTerasa: 3.3,
+            pozitie: "N-V",
             schitaApartament: "../images/sketchApartment/Corp2Et1Ap01Cam2.jpg",
             pret: {
-                standard: 124146,
-                tva: 19,
-                final: 147700
+                standard: 95095,
+                tva: 9,
+                final: 103700
             },
             disponibilitate: "DISPONIBIL"
         },
@@ -676,15 +685,15 @@ export const apartmentsC2 = {
             etaj: 1,
             cladire: "C2",
             nrCam: 2,
-            suprafataConstruita: 95.88,
-            suprafataUtilaFaraTerasa: 74.30,
-            suprafataTerasa: 9.00,
-            pozitie: "E",
+            suprafataConstruita: 75,
+            suprafataUtilaFaraTerasa: 57,
+            suprafataTerasa: 3.3,
+            pozitie: "N-E",
             schitaApartament: "../images/sketchApartment/Corp2Et1Ap02Cam2.jpg",
             pret: {
-                standard: 126429,
-                tva: 19,
-                final: 150500
+                standard: 95095,
+                tva: 9,
+                final: 103700
             },
             disponibilitate: "DISPONIBIL"
         },
@@ -693,26 +702,43 @@ export const apartmentsC2 = {
             etaj: 1,
             cladire: "C2",
             nrCam: 2,
-            suprafataConstruita: 98.89,
-            suprafataUtilaFaraTerasa: 73.40,
-            suprafataTerasa: 9.10,
-            pozitie: "S-E",
+            suprafataConstruita: 79,
+            suprafataUtilaFaraTerasa: 59,
+            suprafataTerasa: 9,
+            pozitie: "E",
             schitaApartament: "../images/sketchApartment/Corp2Et1Ap03Cam2.jpg",
             pret: {
-                standard: 125081,
-                tva: 19,
-                final: 148800
+                standard: 102927 ,
+                tva: 9,
+                final: 112200
             },
-            disponibilitate: "DISPONIBIL"
+            disponibilitate: "VANDUT"
+        },
+        AP_4: {
+            id: "AP_3",
+            etaj: 1,
+            cladire: "C2",
+            nrCam: 2,
+            suprafataConstruita: 79,
+            suprafataUtilaFaraTerasa: 55,
+            suprafataTerasa: 9.1,
+            pozitie: "S-E",
+            schitaApartament: "../images/sketchApartment/Corp2Et1Ap04Cam2.jpg",
+            pret: {
+                standard: 103257  ,
+                tva: 9,
+                final: 105900
+            },
+            disponibilitate: "VANDUT"
         },
         AP_5: {
             id: "AP_5",
             etaj: 1,
             cladire: "C2",
             nrCam: 2,
-            suprafataConstruita: 92.38,
-            suprafataUtilaFaraTerasa: 67.00,
-            suprafataTerasa: 9.10,
+            suprafataConstruita: 83,
+            suprafataUtilaFaraTerasa: 61,
+            suprafataTerasa: 7,
             pozitie: "S-V",
             schitaApartament: "../images/sketchApartment/Corp2Et1Ap05Cam2.jpg",
             pret: {
@@ -720,17 +746,18 @@ export const apartmentsC2 = {
                 tva: 19,
                 final: 136700
             },
-            disponibilitate: "DISPONIBIL"
+            disponibilitate: "VANDUT"
         },
         AP_7: {
             id: "AP_7",
             etaj: 1,
             cladire: "C2",
             nrCam: 2,
-            suprafataConstruita: 89.29,
-            suprafataUtilaFaraTerasa: 67.00,
-            suprafataTerasa: 7.80,
+            suprafataConstruita: 89,
+            suprafataUtilaFaraTerasa: 67,
+            suprafataTerasa: 7.8,
             pozitie: "N-V",
+            schitaApartament: "../images/sketchApartment/Corp2Et1Ap07Cam2.jpg",
             pret: {
                 standard: 0,
                 tva: 9,
@@ -743,10 +770,11 @@ export const apartmentsC2 = {
             etaj: 2,
             cladire: "C2",
             nrCam: 2,
-            suprafataConstruita: 89.04,
-            suprafataUtilaFaraTerasa: 67.00,
-            suprafataTerasa: 7.80,
+            suprafataConstruita: 89,
+            suprafataUtilaFaraTerasa: 67,
+            suprafataTerasa: 7.8,
             pozitie: "N-E",
+            schitaApartament: "../images/sketchApartment/Corp2Et2Ap08Cam2.jpg",
             pret: {
                 standard: 0,
                 tva: 9,
@@ -759,90 +787,96 @@ export const apartmentsC2 = {
             etaj: 2,
             cladire: "C2",
             nrCam: 2,
-            suprafataConstruita: 79.05,
-            suprafataUtilaFaraTerasa: 59.40,
-            suprafataTerasa: 9.30,
+            suprafataConstruita: 79,
+            suprafataUtilaFaraTerasa: 59,
+            suprafataTerasa: 9.3,
             pozitie: "E",
+            schitaApartament: "../images/sketchApartment/Corp2Et2Ap09Cam2.jpg",
             pret: {
                 standard: 104887,
                 tva: 9,
                 final: 114300
             },
-            disponibilitate: ""
+            disponibilitate: "DISPONIBIL"
         },
         AP_10: {
             id: "AP_10",
             etaj: 2,
             cladire: "C2",
             nrCam: 2,
-            suprafataConstruita: 79.12,
-            suprafataUtilaFaraTerasa: 55.90,
-            suprafataTerasa: 9.10,
+            suprafataConstruita: 79,
+            suprafataUtilaFaraTerasa: 55,
+            suprafataTerasa: 9.1,
             pozitie: "S-E",
+            schitaApartament: "../images/sketchApartment/Corp2Et2Ap10Cam2.jpg",
             pret: {
                 standard: 105283,
                 tva: 9,
                 final: 114800
             },
-            disponibilitate: ""
+            disponibilitate: "DISPONIBIL"
         },
         AP_11: {
             id: "AP_11",
             etaj: 2,
             cladire: "C2",
             nrCam: 2,
-            suprafataConstruita: 83.16,
-            suprafataUtilaFaraTerasa: 61.60,
-            suprafataTerasa: 7.20,
+            suprafataConstruita: 83,
+            suprafataUtilaFaraTerasa: 61,
+            suprafataTerasa: 7,
             pozitie: "S-V",
+            schitaApartament: "../images/sketchApartment/Corp2Et2Ap11Cam2.jpg",
             pret: {
                 standard: 110840,
                 tva: 9,
                 final: 120800
             },
-            disponibilitate: ""
+            disponibilitate: "DISPONIBIL"
         },
         AP_13: {
             id: "AP_13",
             etaj: 3,
             cladire: "C2",
             nrCam: 2,
-            suprafataConstruita: 89.29,
-            suprafataUtilaFaraTerasa: 67.00,
-            suprafataTerasa: 7.80,
+            suprafataConstruita: 89,
+            suprafataUtilaFaraTerasa: 67,
+            suprafataTerasa: 7.8,
             pozitie: "N-V",
+            schitaApartament: "../images/sketchApartment/Corp2Et3Ap13Cam2.jpg",
             pret: {
                 standard: 118151,
                 tva: 9,
                 final: 128800
             },
-            disponibilitate: ""
+            disponibilitate: "DISPONIBIL"
         },
         AP_14: {
             id: "AP_14",
             etaj: 3,
             cladire: "C2",
             nrCam: 2,
-            suprafataConstruita: 90.04,
-            suprafataUtilaFaraTerasa: 67.00,
-            suprafataTerasa: 7.80,
+            suprafataConstruita: 90,
+            suprafataUtilaFaraTerasa: 67,
+            suprafataTerasa: 7.8,
             pozitie: "N-E",
+            schitaApartament: "../images/sketchApartment/Corp2Et3Ap14Cam2.jpg",
             pret: {
                 standard: 116985,
                 tva: 9,
                 final: 127500
             },
-            disponibilitate: ""
+            disponibilitate: "DISPONIBIL"
         },
         AP_15: {
             id: "AP_15",
             etaj: 3,
             cladire: "C2",
             nrCam: 2,
-            suprafataConstruita: 79.05,
-            suprafataUtilaFaraTerasa: 59.40,
-            suprafataTerasa: 9.30,
+            suprafataConstruita: 79,
+            suprafataUtilaFaraTerasa: 59,
+            suprafataTerasa: 9,
             pozitie: "E",
+            schitaApartament: "../images/sketchApartment/Corp2Et3Ap15Cam2.jpg",
             pret: {
                 standard: 0,
                 tva: 9,
@@ -855,26 +889,28 @@ export const apartmentsC2 = {
             etaj: 3,
             cladire: "C2",
             nrCam: 2,
-            suprafataConstruita: 79.12,
-            suprafataUtilaFaraTerasa: 55.90,
-            suprafataTerasa: 9.10,
+            suprafataConstruita: 79,
+            suprafataUtilaFaraTerasa: 55,
+            suprafataTerasa: 9,
             pozitie: "S-E",
+            schitaApartament: "../images/sketchApartment/Corp2Et3Ap16Cam2.jpg",
             pret: {
                 standard: 100858,
                 tva: 9,
                 final: 109900
             },
-            disponibilitate: ""
+            disponibilitate: "DISPONIBIL"
         },
         AP_17: {
             id: "AP_17",
             etaj: 3,
             cladire: "C2",
             nrCam: 2,
-            suprafataConstruita: 83.16,
-            suprafataUtilaFaraTerasa: 61.60,
+            suprafataConstruita: 83,
+            suprafataUtilaFaraTerasa: 61,
             suprafataTerasa: 7.20,
             pozitie: "S-V",
+            schitaApartament: "../images/sketchApartment/Corp2Et3Ap17Cam2.jpg",
             pret: {
                 standard: 0,
                 tva: 9,
@@ -887,64 +923,68 @@ export const apartmentsC2 = {
             etaj: 4,
             cladire: "C2",
             nrCam: 2,
-            suprafataConstruita: 89.29,
-            suprafataUtilaFaraTerasa: 67.00,
-            suprafataTerasa: 7.80,
+            suprafataConstruita: 89,
+            suprafataUtilaFaraTerasa: 67,
+            suprafataTerasa: 7,
             pozitie: "N-V",
+            schitaApartament: "../images/sketchApartment/Corp2Et4Ap19Cam2.jpg",
             pret: {
                 standard: 120362,
                 tva: 9,
                 final: 131200
             },
-            disponibilitate: ""
+            disponibilitate: "DISPONIBIL"
         },
         AP_20: {
             id: "AP_20",
             etaj: 4,
             cladire: "C2",
             nrCam: 2,
-            suprafataConstruita: 90.04,
-            suprafataUtilaFaraTerasa: 67.00,
-            suprafataTerasa: 7.80,
+            suprafataConstruita: 90,
+            suprafataUtilaFaraTerasa: 67,
+            suprafataTerasa: 7,
             pozitie: "N-E",
+            schitaApartament: "../images/sketchApartment/Corp2Et4Ap20Cam2.jpg",
             pret: {
                 standard: 120362,
                 tva: 9,
                 final: 131200
             },
-            disponibilitate: ""
+            disponibilitate: "DISPONIBIL"
         },
         AP_21: {
             id: "AP_21",
             etaj: 4,
             cladire: "C2",
             nrCam: 2,
-            suprafataConstruita: 79.05,
-            suprafataUtilaFaraTerasa: 59.40,
-            suprafataTerasa: 9.30,
+            suprafataConstruita: 79,
+            suprafataUtilaFaraTerasa: 59,
+            suprafataTerasa: 9,
             pozitie: "E",
+            schitaApartament: "../images/sketchApartment/Corp2Et4Ap21Cam2.jpg",
             pret: {
                 standard: 108808,
                 tva: 9,
                 final: 118600
             },
-            disponibilitate: ""
+            disponibilitate: "DISPONIBIL"
         },
         AP_22: {
             id: "AP_22",
             etaj: 4,
             cladire: "C2",
             nrCam: 2,
-            suprafataConstruita: 79.12,
-            suprafataUtilaFaraTerasa: 55.9,
-            suprafataTerasa: 9.10,
+            suprafataConstruita: 79,
+            suprafataUtilaFaraTerasa: 55,
+            suprafataTerasa: 9,
             pozitie: "S-E",
+            schitaApartament: "../images/sketchApartment/Corp2Et4Ap22Cam2.jpg",
             pret: {
                 standard: 109303,
                 tva: 9,
                 final: 119100
             },
-            disponibilitate: ""
+            disponibilitate: "DISPONIBIL"
         }
     },
     
@@ -955,26 +995,28 @@ export const apartmentsC2 = {
             etaj: 5,
             cladire: "C2",
             nrCam: 3,
-            suprafataConstruita: 157.81,
-            suprafataUtilaFaraTerasa: 92.2,
-            suprafataTerasa: 40.30,
+            suprafataConstruita: 157,
+            suprafataUtilaFaraTerasa: 92,
+            suprafataTerasa: 40,
             pozitie: "N",
+            schitaApartament: "../images/sketchApartment/Corp2Et5Ap24Cam3.jpg",
             pret: {
                 standard: 194693,
                 tva: 19,
                 final: 231700
             },
-            disponibilitate: ""
+            disponibilitate: "DISPONIBIL"
         },
         AP_25: {
             id: "AP_25",
             etaj: 5,
             cladire: "C2",
             nrCam: 3,
-            suprafataConstruita: 148.78,
-            suprafataUtilaFaraTerasa: 86.4,
-            suprafataTerasa: 40.80,
+            suprafataConstruita: 148,
+            suprafataUtilaFaraTerasa: 86,
+            suprafataTerasa: 40,
             pozitie: "E",
+            schitaApartament: "../images/sketchApartment/Corp2Et5Ap25Cam3.jpg",
             pret: {
                 standard: 0,
                 tva: 19,
@@ -987,10 +1029,11 @@ export const apartmentsC2 = {
             etaj: 5,
             cladire: "C2",
             nrCam: 3,
-            suprafataConstruita: 170.42,
-            suprafataUtilaFaraTerasa: 86.3,
-            suprafataTerasa: 57.90,
+            suprafataConstruita: 170,
+            suprafataUtilaFaraTerasa: 86,
+            suprafataTerasa: 57,
             pozitie: "S",
+            schitaApartament: "../images/sketchApartment/Corp2Et5Ap26Cam3.jpg",
             pret: {
                 standard: 0,
                 tva: 19,
@@ -1007,10 +1050,11 @@ export const apartmentsC2 = {
             etaj: 5,
             cladire: "C2",
             nrCam: 4,
-            suprafataConstruita: 149.02,
-            suprafataUtilaFaraTerasa: 101.3,
-            suprafataTerasa: 11.10,
+            suprafataConstruita: 139,
+            suprafataUtilaFaraTerasa: 103,
+            suprafataTerasa: 11,
             pozitie: "S-V",
+            schitaApartament: "../images/sketchApartment/Corp2Et5Ap23Cam4.jpg",
             pret: {
                 standard: 0,
                 tva: 19,

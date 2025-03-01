@@ -1,3 +1,23 @@
+// Mobile Menu Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuButton = document.querySelector('.mobile-menu-button');
+    const navLinks = document.querySelector('.nav-links');
+    const menuIcon = document.querySelector('.menu-icon');
+
+    mobileMenuButton.addEventListener('click', function() {
+        navLinks.classList.toggle('active');
+        menuIcon.classList.toggle('active');
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+        if (!event.target.closest('.mobile-menu-button') && !event.target.closest('.nav-links')) {
+            navLinks.classList.remove('active');
+            menuIcon.classList.remove('active');
+        }
+    });
+});
+
 // Funcții pentru formatarea numerelor
 function formatNumber(number) {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
