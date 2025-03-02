@@ -72,47 +72,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Achievement Counter Animation
-    const achievementsSection = document.querySelector(".achievements-grid");
-    if (achievementsSection) {
-        const options = {
-            root: null,
-            rootMargin: "0px",
-            threshold: 0.1,
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    const counters = entry.target.querySelectorAll(".achievement-number");
-                    counters.forEach((counter) => {
-                        const target = parseInt(counter.getAttribute("data-target"));
-                        const suffix = counter.getAttribute("data-suffix") || "";
-                        let current = 0;
-                        const increment = target / 50;
-                        const duration = 2000;
-                        const stepTime = duration / 50;
-
-                        const updateCounter = () => {
-                            current += increment;
-                            if (current >= target) {
-                                counter.textContent = target + suffix;
-                            } else {
-                                counter.textContent = Math.floor(current) + suffix;
-                                setTimeout(updateCounter, stepTime);
-                            }
-                        };
-
-                        updateCounter();
-                    });
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, options);
-
-        observer.observe(achievementsSection);
-    }
-
     // Google Maps Initialization
     window.initMap = function() {
         // Coordinates for "Bulevardul Nicolae Bălcescu 41, Câmpina"

@@ -30,19 +30,43 @@ document.addEventListener('DOMContentLoaded', function() {
         link.classList.remove('active');
         
         const linkPath = link.getAttribute('href');
-        const currentPageName = currentPath.split('/').pop();
-        const linkPageName = linkPath.split('/').pop();
         
-        if (currentPageName === linkPageName) {
+        // Check if the current path contains the link path
+        // This handles both exact matches and subdirectory matches
+        if (currentPath === linkPath || 
+            (linkPath !== '/home/home.html' && currentPath.includes(linkPath.split('/').slice(0, -1).join('/'))) ||
+            (linkPath === '/home/home.html' && (currentPath === '/' || currentPath.endsWith('index.html')))) {
             link.classList.add('active');
         }
     });
 
     // Initialize mobile menu
     initializeMobileMenu();
+    
+    console.log('Navbar initialized on page load');
 });
 
 // Export the initialization functions for use after dynamic loading
 window.initializeNavbar = function() {
+    // Set active link based on current page
+    const currentPath = window.location.pathname;
+    const links = document.querySelectorAll('.nav-links a');
+    
+    links.forEach(link => {
+        // Remove any existing active classes first
+        link.classList.remove('active');
+        
+        const linkPath = link.getAttribute('href');
+        
+        // Check if the current path contains the link path
+        // This handles both exact matches and subdirectory matches
+        if (currentPath === linkPath || 
+            (linkPath !== '/home/home.html' && currentPath.includes(linkPath.split('/').slice(0, -1).join('/'))) ||
+            (linkPath === '/home/home.html' && (currentPath === '/' || currentPath.endsWith('index.html')))) {
+            link.classList.add('active');
+        }
+    });
+    
     initializeMobileMenu();
+    console.log('Navbar initialized after dynamic loading');
 } 

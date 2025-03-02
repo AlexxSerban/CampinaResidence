@@ -189,7 +189,7 @@
                 </div>
                 <span
                   class="achievement-number"
-                  data-target="20"
+                  data-target="30"
                   data-suffix="+"
                   >0</span
                 >
@@ -204,7 +204,7 @@
                     />
                   </svg>
                 </div>
-                <span class="achievement-number" data-target="15">0</span>
+                <span class="achievement-number" data-target="7">0</span>
                 <span class="achievement-label">Proiecte Finalizate</span>
               </div>
               <div class="achievement-item" data-aos="zoom-in" data-aos-delay="400">
@@ -218,7 +218,7 @@
                 </div>
                 <span
                   class="achievement-number"
-                  data-target="2500"
+                  data-target="250"
                   data-suffix="+"
                   >0</span
                 >
@@ -242,6 +242,105 @@
                 <span class="achievement-label">Livrare la Termen</span>
               </div>
             </div>
+            
+            <!-- Inline script to ensure counter animation works -->
+            <script>
+              // This script ensures the counter animation works
+              document.addEventListener('DOMContentLoaded', function() {
+                // Function to check if element is in viewport
+                function isInViewport(element) {
+                  const rect = element.getBoundingClientRect();
+                  return (
+                    rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.bottom >= 0
+                  );
+                }
+                
+                // Function to animate counters
+                function animateCounters() {
+                  console.log("Inline script: Starting counter animation");
+                  const counters = document.querySelectorAll(".achievement-number");
+                  
+                  counters.forEach((counter) => {
+                    const target = parseInt(counter.getAttribute("data-target"));
+                    const suffix = counter.getAttribute("data-suffix") || "";
+                    let current = 0;
+                    
+                    // Reset counter to 0 before starting animation
+                    counter.textContent = "0" + suffix;
+                    
+                    const increment = target / 50;
+                    const duration = 2000;
+                    const stepTime = duration / 50;
+                    
+                    const updateCounter = () => {
+                      current += increment;
+                      if (current >= target) {
+                        counter.textContent = target + suffix;
+                      } else {
+                        counter.textContent = Math.floor(current) + suffix;
+                        setTimeout(updateCounter, stepTime);
+                      }
+                    };
+                    
+                    updateCounter();
+                  });
+                  
+                  // Hide the manual trigger button after animation
+                  const triggerBtn = document.getElementById('trigger-counter-btn');
+                  if (triggerBtn) {
+                    triggerBtn.style.display = 'none';
+                  }
+                  
+                  // Clear the timeout that would show the manual button
+                  if (window.counterButtonTimeout) {
+                    clearTimeout(window.counterButtonTimeout);
+                  }
+                }
+                
+                // Check if achievements section is in viewport on scroll
+                let hasAnimated = false;
+                function checkScroll() {
+                  const achievementsSection = document.querySelector(".achievements-grid");
+                  if (!achievementsSection || hasAnimated) return;
+                  
+                  if (isInViewport(achievementsSection)) {
+                    console.log("Inline script: Achievements section is in viewport");
+                    animateCounters();
+                    hasAnimated = true;
+                    window.removeEventListener('scroll', checkScroll);
+                  }
+                }
+                
+                // Add scroll event listener
+                window.addEventListener('scroll', checkScroll);
+                
+                // Check on initial load
+                setTimeout(checkScroll, 500);
+                
+                // Add click handler for manual trigger button
+                const triggerBtn = document.getElementById('trigger-counter-btn');
+                if (triggerBtn) {
+                  triggerBtn.addEventListener('click', function() {
+                    if (!hasAnimated) {
+                      animateCounters();
+                      hasAnimated = true;
+                    }
+                  });
+                }
+                
+                // Show the manual trigger button after 5 seconds if animation hasn't run yet
+                window.counterButtonTimeout = setTimeout(function() {
+                  if (!hasAnimated && triggerBtn) {
+                    console.log("Animation didn't trigger automatically, showing manual button");
+                    triggerBtn.style.display = 'block';
+                  }
+                }, 5000);
+              });
+            </script>
+            
+            <!-- Manual trigger button (hidden by default) -->
+            <button id="trigger-counter-btn" style="background: #C38264; color: white; border: none; padding: 5px 10px; margin-top: 20px; cursor: pointer; font-size: 12px; border-radius: 4px; display: none;">Actualizează statisticile</button>
           </div>
         </div>
       </div>
@@ -775,6 +874,8 @@
     <!-- Load and initialize components -->
     <script src="../components/navbar.js"></script>
     <script src="../components/footer/footer.js"></script>
+    <script src="home.js"></script>
+    <script src="counter.js"></script>
     <script>
         // Load navbar
         fetch('../components/navbar.html')

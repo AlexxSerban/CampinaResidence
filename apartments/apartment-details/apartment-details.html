@@ -6,6 +6,7 @@
     <title>Detalii Apartament | Câmpina Residence</title>
     <link rel="stylesheet" href="../../components/variables.css">
     <link rel="stylesheet" href="../../components/navbar.css">
+    <link rel="stylesheet" href="../../components/footer/footer.css">
     <link rel="stylesheet" href="../../home/home.css">
     <link rel="stylesheet" href="apartment-details.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -180,16 +181,29 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script type="module" src="apartment-details.js"></script>
     <script src="../../components/navbar.js"></script>
+    
+    <!-- Footer placeholder -->
+    <div id="footer-placeholder"></div>
+    <script src="../../components/footer/footer.js"></script>
+    
     <script>
-        // Load navbar
-        fetch('../../components/navbar.html')
-            .then(response => response.text())
+        // Load navbar with absolute path
+        fetch('/components/navbar.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to load navbar: ' + response.status);
+                }
+                return response.text();
+            })
             .then(data => {
                 document.getElementById('navbar-placeholder').innerHTML = data;
                 // Initialize navbar after loading
                 if (typeof initializeNavbar === 'function') {
                     initializeNavbar();
                 }
+            })
+            .catch(error => {
+                console.error('Error loading navbar:', error);
             });
     </script>
 </body>
