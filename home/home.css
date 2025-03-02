@@ -1294,18 +1294,21 @@ label {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: var(--background);
+    background: var(--accent);
+    opacity: 0.9;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--text-medium);
+    color: white;
     transition: all 0.3s ease;
 }
 
 .social-link:hover {
     background: var(--accent);
-    color: var(--white);
+    color: white;
+    opacity: 1;
     transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .footer-links h4,

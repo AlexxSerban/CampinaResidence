@@ -58,12 +58,33 @@ body {
 }
 
 .social-link {
-    color: var(--accent);
-    transition: color 0.3s ease;
+    color: white;
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--accent);
+    opacity: 0.9;
+    border: none;
+    overflow: hidden;
 }
 
 .social-link:hover {
-    color: var(--primary);
+    color: white;
+    transform: translateY(-2px);
+    opacity: 1;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.social-link svg {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    z-index: 2;
 }
 
 .footer-links h4,
@@ -238,8 +259,10 @@ body {
 
 .social-button span {
     font-size: 0.95rem;
+    color: white;
 }
 
+/* Stiluri specifice pentru fiecare platformă */
 .social-button.facebook {
     background-color: #1877f2;
     color: white;

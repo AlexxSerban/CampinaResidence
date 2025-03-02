@@ -794,25 +794,23 @@
                 console.error('Error loading navbar:', error);
             });
 
-        // Load footer
-        fetch('../components/footer/footer.html')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.text();
-            })
-            .then(data => {
-                document.getElementById('footer-placeholder').innerHTML = data;
-                if (typeof initializeFooter === 'function') {
-                    initializeFooter();
-                }
-            })
-            .catch(error => {
-                console.error('Error loading footer:', error);
-                document.getElementById('footer-placeholder').innerHTML = 
-                    '<div style="text-align: center; padding: 20px; color: red;">Eroare la încărcarea footer-ului. Vă rugăm reîncărcați pagina.</div>';
-            });
+        // Explicitly call loadFooter function
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof window.loadFooter === 'function') {
+                window.loadFooter();
+                console.log('Footer load explicitly called from home.html');
+            } else {
+                console.error('loadFooter function not available');
+            }
+        });
+        
+        // If DOM is already loaded, try to load footer immediately
+        if (document.readyState === 'complete' || document.readyState === 'interactive') {
+            if (typeof window.loadFooter === 'function') {
+                window.loadFooter();
+                console.log('Footer load called immediately');
+            }
+        }
     </script>
   </body>
 </html>

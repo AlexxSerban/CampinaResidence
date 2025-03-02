@@ -446,25 +446,37 @@ body {
 
 .social-links {
   display: flex;
-  gap: 20px;
+  gap: 16px;
 }
 
 .social-link {
-  color: var(--accent);
+  color: white;
   transition: all 0.3s ease;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: rgba(195, 130, 100, 0.1);
+  background-color: var(--accent);
+  opacity: 0.9;
+  border: none;
+  overflow: hidden;
 }
 
 .social-link:hover {
-  color: var(--accent-hover);
-  background: rgba(232, 170, 137, 0.2);
+  color: white;
   transform: translateY(-2px);
+  opacity: 1;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.social-link svg {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  z-index: 2;
 }
 
 .footer-links h4,

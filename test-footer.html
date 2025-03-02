@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Footer</title>
+    <link rel="stylesheet" href="components/footer/footer.css">
+    <style>
+        :root {
+            --dark-bg: #1a1a1a;
+            --light-text: #ffffff;
+            --muted-text: #a0a0a0;
+            --primary-color: #3498db;
+            --accent-color: #2ecc71;
+        }
+        
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        main {
+            flex: 1;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        h1 {
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Test Footer Component</h1>
+        <p>This page is used to test if the footer component loads correctly.</p>
+    </main>
+    
+    <div id="footer-placeholder"></div>
+    
+    <script src="components/footer/footer.js"></script>
+    <script>
+        // Log to console for debugging
+        console.log('Test page loaded');
+        
+        // Explicitly call loadFooter
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM fully loaded');
+            if (typeof window.loadFooter === 'function') {
+                window.loadFooter();
+                console.log('Footer load function called');
+            } else {
+                console.error('loadFooter function not available');
+            }
+        });
+        
+        // If DOM is already loaded, try to load footer immediately
+        if (document.readyState === 'complete' || document.readyState === 'interactive') {
+            console.log('Document already loaded, state:', document.readyState);
+            if (typeof window.loadFooter === 'function') {
+                window.loadFooter();
+                console.log('Footer load called immediately');
+            }
+        }
+    </script>
+</body>
+</html> 
