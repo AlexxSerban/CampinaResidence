@@ -3,8 +3,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // Check if navbar placeholder exists and load the navbar if needed
     const navbarPlaceholder = document.getElementById('navbar-placeholder');
     if (navbarPlaceholder && navbarPlaceholder.innerHTML.trim() === '') {
+        // Get the correct path using site configuration
+        const navbarPath = window.siteConfig ? 
+            window.siteConfig.getUrl('/components/navbar.html') : 
+            '/components/navbar.html';
+            
         // Load navbar if it's not already loaded
-        fetch('/components/navbar.html')
+        fetch(navbarPath)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Failed to load navbar: ' + response.status);
@@ -117,7 +122,8 @@ if (document.readyState === 'complete' || document.readyState === 'interactive')
 function loadFooter() {
     const footerPlaceholder = document.getElementById('footer-placeholder');
     if (footerPlaceholder) {
-        // Folosim căi absolute pentru a asigura că imaginile se încarcă corect în toate paginile
+        // Get base URL from site configuration
+        const baseUrl = window.siteConfig ? window.siteConfig.baseUrl : '';
         
         // Try direct injection first (more reliable)
         const footerHTML = `
@@ -126,7 +132,7 @@ function loadFooter() {
                 <div class="footer-columns">
                     <!-- Coloana stângă: Logo, text și social media -->
                     <div class="footer-column footer-branding">
-                        <img src="/images/logo.jpg" alt="Câmpina Residence Logo" class="footer-logo">
+                        <img src="${baseUrl}/images/logo.jpg" alt="Câmpina Residence Logo" class="footer-logo">
                         <p class="footer-text">Descoperă un nou standard în confort și eleganță, unde fiecare detaliu este atent selecționat pentru a-ți oferi experiența locuirii perfecte.</p>
                         
                         <div class="social-links">
@@ -151,26 +157,26 @@ function loadFooter() {
                     <!-- Coloana dreaptă: Navigare și Legal -->
                     <div class="footer-column footer-nav-combined">
                         <div class="footer-nav footer-nav-horizontal">
-                            <a href="/home/home.html" class="footer-nav-link">Acasă</a>
-                            <a href="/apartments/apartments.html" class="footer-nav-link">Apartamente</a>
-                            <a href="/finishes/finishes.html" class="footer-nav-link">Finisaje</a>
-                            <a href="/interior-design/interior-design.html" class="footer-nav-link">Design Interior</a>
-                            <a href="/project.html" class="footer-nav-link">Proiect</a>
-                            <a href="/contact/contact.html" class="footer-nav-link">Contact</a>
+                            <a href="${baseUrl}/home/home.html" class="footer-nav-link">Acasă</a>
+                            <a href="${baseUrl}/apartments/apartments.html" class="footer-nav-link">Apartamente</a>
+                            <a href="${baseUrl}/finishes/finishes.html" class="footer-nav-link">Finisaje</a>
+                            <a href="${baseUrl}/interior-design/interior-design.html" class="footer-nav-link">Design Interior</a>
+                            <a href="${baseUrl}/project.html" class="footer-nav-link">Proiect</a>
+                            <a href="${baseUrl}/contact/contact.html" class="footer-nav-link">Contact</a>
                         </div>
                         
                         <div class="footer-legal-section">
                             <div class="footer-nav footer-legal-links">
-                                <a href="/cookies.html" class="footer-nav-link">Cookies</a>
-                                <a href="/privacy.html" class="footer-nav-link">Confidențialitate</a>
+                                <a href="${baseUrl}/cookies.html" class="footer-nav-link">Cookies</a>
+                                <a href="${baseUrl}/privacy.html" class="footer-nav-link">Confidențialitate</a>
                             </div>
                             
                             <div class="footer-legal-images">
                                 <a href="https://reclamatiisal.anpc.ro/" class="footer-legal-image-link" target="_blank" rel="noopener noreferrer">
-                                    <img src="/images/solutionarea alternativa.png" alt="Soluționarea Alternativă" class="footer-legal-image">
+                                    <img src="${baseUrl}/images/solutionarea alternativa.png" alt="Soluționarea Alternativă" class="footer-legal-image">
                                 </a>
                                 <a href="https://ec.europa.eu/consumers/odr/main/index.cfm?event=main.home2.show&lng=RO" class="footer-legal-image-link" target="_blank" rel="noopener noreferrer">
-                                    <img src="/images/solutionarea online.png" alt="Soluționarea Online" class="footer-legal-image">
+                                    <img src="${baseUrl}/images/solutionarea online.png" alt="Soluționarea Online" class="footer-legal-image">
                                 </a>
                             </div>
                         </div>

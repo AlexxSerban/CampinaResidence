@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Câmpina Residence</title>
-    <meta http-equiv="refresh" content="0; url=home/home.html">
     <link rel="icon" type="image/x-icon" href="images/logo.jpg">
     <!-- SEO Meta Tags -->
     <meta name="description" content="Câmpina Residence - Complexul rezidențial premium din Câmpina. Apartamente moderne cu 2, 3 și 4 camere, finisaje de calitate și poziție excelentă.">
@@ -14,11 +13,22 @@
     <meta property="og:description" content="Descoperă apartamentele premium din complexul rezidențial Câmpina Residence. Confort și eleganță în inima orașului Câmpina.">
     <meta property="og:image" content="images/building1.jpg">
     <meta property="og:url" content="https://www.campinaresidence.ro">
+    <!-- Load site configuration -->
+    <script src="js/config.js"></script>
   </head>
   <body>
     <p>Vă rugăm așteptați, veți fi redirecționat către pagina principală...</p>
     <script>
-        window.location.href = 'home/home.html';
+        // Wait for the configuration to load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Use the site configuration to get the correct URL
+            if (window.siteConfig) {
+                window.location.href = window.siteConfig.getUrl('/home/home.html');
+            } else {
+                // Fallback if configuration is not loaded
+                window.location.href = 'home/home.html';
+            }
+        });
     </script>
   </body>
 </html>
