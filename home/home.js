@@ -232,4 +232,118 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize first slide
     updateSlider();
+
+    // Mobile menu functionality
+    // Get the mobile menu button and nav links
+    const mobileMenuButton = document.querySelector('.mobile-menu-button');
+    const navLinks = document.querySelector('.nav-links');
+    
+    // Toggle mobile menu when button is clicked
+    if (mobileMenuButton) {
+        mobileMenuButton.addEventListener('click', function() {
+            this.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+    }
+    
+    // Close mobile menu when a link is clicked
+    const navLinkItems = document.querySelectorAll('.nav-links a');
+    navLinkItems.forEach(link => {
+        link.addEventListener('click', function() {
+            if (window.innerWidth <= 768) {
+                mobileMenuButton.classList.remove('active');
+                navLinks.classList.remove('active');
+            }
+        });
+    });
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(event) {
+        if (window.innerWidth <= 768 && 
+            !event.target.closest('.nav-links') && 
+            !event.target.closest('.mobile-menu-button') && 
+            navLinks.classList.contains('active')) {
+            mobileMenuButton.classList.remove('active');
+            navLinks.classList.remove('active');
+        }
+    });
+    
+    // Adjust header height on mobile devices
+    function adjustHeaderHeight() {
+        const header = document.querySelector('.main-header');
+        if (header && window.innerWidth <= 768) {
+            const viewportHeight = window.innerHeight;
+            header.style.height = `${viewportHeight}px`;
+        }
+    }
+    
+    // Run on load and resize
+    adjustHeaderHeight();
+    window.addEventListener('resize', adjustHeaderHeight);
+    
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if (targetId !== '#') {
+                e.preventDefault();
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const headerOffset = 80;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        });
+    });
+    
+    // Improve responsiveness of achievement counters
+    function checkAchievementVisibility() {
+        const achievementsSection = document.querySelector('.achievements-grid');
+        if (achievementsSection) {
+            const rect = achievementsSection.getBoundingClientRect();
+            const isVisible = (
+                rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.8 &&
+                rect.bottom >= 0
+            );
+            
+            if (isVisible && !window.hasAnimatedCounters) {
+                window.hasAnimatedCounters = true;
+                const counters = document.querySelectorAll('.achievement-number');
+                
+                counters.forEach(counter => {
+                    const target = parseInt(counter.getAttribute('data-target'));
+                    const suffix = counter.getAttribute('data-suffix') || '';
+                    let current = 0;
+                    
+                    counter.textContent = '0' + suffix;
+                    
+                    const increment = target / 50;
+                    const duration = 2000;
+                    const stepTime = duration / 50;
+                    
+                    const updateCounter = () => {
+                        current += increment;
+                        if (current >= target) {
+                            counter.textContent = target + suffix;
+                        } else {
+                            counter.textContent = Math.floor(current) + suffix;
+                            setTimeout(updateCounter, stepTime);
+                        }
+                    };
+                    
+                    updateCounter();
+                });
+            }
+        }
+    }
+    
+    // Check on scroll and initial load
+    window.addEventListener('scroll', checkAchievementVisibility);
+    setTimeout(checkAchievementVisibility, 500);
 }); 

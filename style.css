@@ -1,10 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@400;500;600&family=Baskervville&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: var(--body-font);
     background-color: #f0f0f0;
     text-align: center;
     padding: 50px;
 }
 
-h1 {
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font);
     color: #333;
+}
+
+button, .button, a.button, input[type="button"], input[type="submit"] {
+    font-family: var(--button-font);
 }

@@ -17,8 +17,9 @@
     --max-width: 1400px;
     
     /* Typography */
-    --heading-font: -apple-system, 'SF Pro Display', 'SF Pro Text', sans-serif;
-    --body-font: 'Inter', sans-serif;
+    --heading-font: 'Playfair Display', serif;
+    --body-font: 'Montserrat Medium', 'Montserrat', sans-serif;
+    --button-font: 'Baskervville', serif;
     
     /* Transitions */
     --transition-fast: 0.3s ease;

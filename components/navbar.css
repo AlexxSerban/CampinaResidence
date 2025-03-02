@@ -20,6 +20,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-family: var(--body-font);
 }
 
 .logo {
@@ -46,6 +47,7 @@
     text-decoration: none;
     transition: color 0.3s ease;
     position: relative;
+    font-family: var(--body-font);
 }
 
 .nav-links a:hover,
@@ -85,6 +87,7 @@
     padding: 10px;
     cursor: pointer;
     z-index: 1000;
+    font-family: var(--button-font);
 }
 
 .menu-icon {

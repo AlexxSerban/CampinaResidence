@@ -12,10 +12,18 @@
     --text-medium: rgba(44, 62, 80, 0.7);
     --white: #FFFFFF;
     --shadow: rgba(27, 54, 93, 0.1);
+    
+    /* Typography */
+    --heading-font: 'Playfair Display', serif;
+    --body-font: 'Montserrat Medium', 'Montserrat', sans-serif;
+    --button-font: 'Baskervville', serif;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@400;500;600&family=Baskervville&display=swap');
+
 body {
-    background-color: var(--white);
+    background-color: var(--white); 
+    font-family: var(--body-font);
 }
 
 /* Apartments Header Styles */
@@ -44,6 +52,7 @@ body {
     margin-bottom: 24px;
     color: #2c3e50;
     font-weight: 600;
+    font-family: var(--heading-font);
 }
 
 .header-description {
@@ -76,6 +85,7 @@ body {
     font-weight: 600;
     color: #2c3e50;
     margin-bottom: 8px;
+    font-family: var(--heading-font);
 }
 
 .stat-label {
@@ -128,6 +138,7 @@ body {
     text-align: center;
     position: relative;
     padding-bottom: 20px;
+    font-family: var(--heading-font);
 }
 
 .building-category h2::after {
@@ -176,6 +187,7 @@ body {
     font-size: 1.5rem;
     color: var(--primary);
     margin-bottom: 12px;
+    font-family: var(--heading-font);
 }
 
 .apartment-info p {
@@ -189,6 +201,7 @@ body {
 
 .apartment-price {
     color: var(--primary);
+    font-weight: bold;
 }
 
 .apartment-status {
@@ -206,6 +219,7 @@ body {
     transition: all 0.3s ease;
     border: none;
     font-weight: 500;
+    font-family: var(--button-font);
 }
 
 .view-details:hover {
@@ -215,8 +229,7 @@ body {
 }
 
 /* Responsive Design */
-@media (max-width: 992px) {
-    .apartments-header {
+@media (max-width: 992px) {.apartments-header {
         min-height: auto;
         padding: 60px 0;
     }
@@ -227,9 +240,7 @@ body {
         gap: 40px;
     }
 
-    .header-content {
-        padding-right: 0;
-    }
+    .header-content {padding-right: 0;}
 
     .mega-title {
         font-size: 2.8rem;
@@ -246,8 +257,7 @@ body {
     }
 }
 
-@media (max-width: 768px) {
-    .apartments-header {
+@media (max-width: 768px) {.apartments-header {
         padding: 40px 0;
     }
 
@@ -260,19 +270,14 @@ body {
         gap: 16px;
     }
 
-    .header-image {
-        height: 400px;
-    }
+    .header-image {height: 400px;}
 }
 
-@media (max-width: 480px) {
-    .mega-title {
+@media (max-width: 480px) {.mega-title {
         font-size: 1.8rem;
     }
 
-    .header-description {
-        font-size: 1rem;
-    }
+    .header-description {font-size: 1rem;}
 
     .header-image {
         height: 300px;
@@ -280,8 +285,7 @@ body {
 }
 
 /* Lightbox Styles */
-.lightbox {
-    position: fixed;
+.lightbox {position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -296,35 +300,26 @@ body {
     transition: all 0.3s ease;
 }
 
-.lightbox.active {
-    opacity: 1;
-    visibility: visible;
-}
+.lightbox.active {opacity: 1;
+    visibility: visible;}
 
-.lightbox-content {
-    position: relative;
+.lightbox-content {position: relative;
     max-width: 90%;
     max-height: 90vh;
-    margin: 20px;
-}
+    margin: 20px;}
 
-.lightbox-content img {
-    max-width: 100%;
+.lightbox-content img {max-width: 100%;
     max-height: 80vh;
     object-fit: contain;
     border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);}
 
-.lightbox-title {
-    color: white;
+.lightbox-title {color: white;
     text-align: center;
     margin-top: 20px;
-    font-size: 1.5rem;
-}
+    font-size: 1.5rem;}
 
-.lightbox-close {
-    position: absolute;
+.lightbox-close {position: absolute;
     top: 20px;
     right: 20px;
     color: white;
@@ -338,16 +333,12 @@ body {
     justify-content: center;
     background: rgba(0, 0, 0, 0.5);
     border-radius: 50%;
-    transition: all 0.3s ease;
-}
+    transition: all 0.3s ease;}
 
-.lightbox-close:hover {
-    background: rgba(255, 255, 255, 0.1);
-    transform: scale(1.1);
-}
+.lightbox-close:hover {background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.1);}
 
-.lightbox-nav {
-    position: absolute;
+.lightbox-nav {position: absolute;
     top: 50%;
     left: 0;
     right: 0;
@@ -355,12 +346,10 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 0 20px;
-    pointer-events: none;
-}
+    pointer-events: none;}
 
 .lightbox-prev,
-.lightbox-next {
-    background: rgba(0, 0, 0, 0.5);
+.lightbox-next {background: rgba(0, 0, 0, 0.5);
     border: none;
     color: white;
     padding: 15px 20px;
@@ -368,40 +357,31 @@ body {
     cursor: pointer;
     border-radius: 50%;
     transition: all 0.3s ease;
-    pointer-events: auto;
-}
+    pointer-events: auto;}
 
 .lightbox-prev:hover,
-.lightbox-next:hover {
-    background: rgba(255, 255, 255, 0.1);
-    transform: scale(1.1);
-}
+.lightbox-next:hover {background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.1);}
 
-.lightbox-counter {
-    position: absolute;
+.lightbox-counter {position: absolute;
     bottom: -30px;
     left: 0;
     right: 0;
     text-align: center;
     color: white;
     font-size: 1rem;
-    font-weight: 500;
-}
+    font-weight: 500;}
 
 .filters-section {
     background: var(--white);
     border-bottom: 1px solid var(--shadow);
 }
 
-.filter-button {
-    background: transparent;
+.filter-button {background: transparent;
     color: var(--accent);
-    border: 1px solid var(--accent);
-}
+    border: 1px solid var(--accent);}
 
 .filter-button:hover,
-.filter-button.active {
-    background: var(--accent-hover);
+.filter-button.active {background: var(--accent-hover);
     color: var(--white);
-    border-color: var(--accent-hover);
-} 
+    border-color: var(--accent-hover);} 
