@@ -1437,20 +1437,81 @@ label {
 
 @media (max-width: 768px) {
     .about-developer {
-        padding: 80px 1rem;
+        padding: 60px 20px;
     }
-    
+
+    .about-container {
+        width: 100%;
+        padding: 0;
+    }
+
+    .about-content {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .about-text-content {
+        padding: 0;
+        text-align: center;
+    }
+
     .about-text-content h2 {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .about-text-content p {
+        text-align: center;
+        margin-bottom: 20px;
+        padding: 0 15px;
+    }
+
+    .achievements-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        padding: 0 15px;
+        margin-top: 40px;
+    }
+
+    .achievement-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .achievement-icon {
+        margin-bottom: 15px;
+    }
+
+    .achievement-number {
         font-size: 2rem;
+        margin-bottom: 8px;
     }
-    
-    .image-top {
-        height: 300px;
+
+    .achievement-label {
+        font-size: 0.9rem;
+        line-height: 1.4;
     }
-    
-    .image-bottom {
-        height: 250px;
-        margin-left: 30px;
+}
+
+@media (max-width: 576px) {
+    .achievements-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .achievement-item {
+        padding: 10px;
+    }
+
+    .achievement-number {
+        font-size: 1.8rem;
+    }
+
+    .achievement-label {
+        font-size: 0.85rem;
     }
 }
 
@@ -2575,23 +2636,44 @@ label {
 
 @media (max-width: 768px) {
     .process {
-        padding: 40px 20px;
+        padding: 60px 0;
     }
 
     .process-content h1 {
-        font-size: 36px;
+        font-size: 2rem;
     }
 
     .process-card {
-        padding: 24px;
+        padding: 20px;
+        margin-bottom: 20px;
+        width: 100%;
     }
 
     .process-cards {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 0 20px;
+        margin-top: 40px;
     }
 
     .process-card:first-child {
-        grid-column: 1;
+        margin-top: 0;
+    }
+
+    .process-card h3 {
+        font-size: 1.25rem;
+        margin-bottom: 10px;
+    }
+
+    .process-card p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    .card-emoji {
+        font-size: 2rem;
+        margin-bottom: 15px;
     }
 }
 
