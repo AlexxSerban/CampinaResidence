@@ -30,7 +30,7 @@ body {
 /* Contact Page Styles */
 .contact-container {
     max-width: 1200px;
-    margin: 240px auto 60px;
+    margin: 240px auto 80px;
     padding: 0 20px;
     background: transparent;
     box-shadow: none;
@@ -271,7 +271,7 @@ body {
 
 @media (max-width: 768px) {
     .contact-container {
-        margin: 80px auto 40px;
+        margin: 160px auto 40px;
         padding: 0 15px;
     }
 
@@ -286,6 +286,10 @@ body {
 
     .contact-form {
         padding: 24px;
+    }
+
+    .contact-info h1 {
+        font-size: 3rem;
     }
 }
 

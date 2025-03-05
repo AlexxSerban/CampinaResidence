@@ -29,9 +29,10 @@ body {
 /* Apartments Header Styles */
 .apartments-header {
     position: relative;
-    padding: 120px 0;
+    padding: 160px 0 120px; /* Increased top padding to account for navbar height */
     text-align: center;
     overflow: hidden;
+    z-index: 1; /* Ensure proper stacking context */
 }
 
 .header-container {
@@ -229,9 +230,10 @@ body {
 }
 
 /* Responsive Design */
-@media (max-width: 992px) {.apartments-header {
+@media (max-width: 992px) {
+    .apartments-header {
         min-height: auto;
-        padding: 60px 0;
+        padding: 120px 0 60px; /* Adjusted padding for tablets */
     }
 
     .header-container {
@@ -257,8 +259,9 @@ body {
     }
 }
 
-@media (max-width: 768px) {.apartments-header {
-        padding: 40px 0;
+@media (max-width: 768px) {
+    .apartments-header {
+        padding: 100px 0 40px; /* Adjusted padding for mobile */
     }
 
     .mega-title {
@@ -273,7 +276,12 @@ body {
     .header-image {height: 400px;}
 }
 
-@media (max-width: 480px) {.mega-title {
+@media (max-width: 480px) {
+    .apartments-header {
+        padding: 90px 0 30px; /* Further adjusted padding for smaller devices */
+    }
+
+    .mega-title {
         font-size: 1.8rem;
     }
 
