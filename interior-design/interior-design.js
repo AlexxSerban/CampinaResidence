@@ -3,6 +3,24 @@ document.addEventListener('DOMContentLoaded', function() {
     const filterButtons = document.querySelectorAll('.filter-button');
     const photoItems = document.querySelectorAll('.photo-item');
 
+    // Function to remove diacritics
+    function removeDiacritics(str) {
+        return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    }
+
+    // Function to show/hide items
+    function toggleItemVisibility(item, show) {
+        if (show) {
+            item.style.display = 'block';
+            item.style.opacity = '1';
+            item.style.visibility = 'visible';
+        } else {
+            item.style.display = 'none';
+            item.style.opacity = '0';
+            item.style.visibility = 'hidden';
+        }
+    }
+
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
             // Remove active class from all buttons
@@ -10,17 +28,24 @@ document.addEventListener('DOMContentLoaded', function() {
             // Add active class to clicked button
             button.classList.add('active');
 
-            const category = button.textContent.toLowerCase();
+            const category = removeDiacritics(button.textContent.toLowerCase());
             
             photoItems.forEach(item => {
                 if (category === 'toate') {
-                    item.style.display = 'block';
+                    toggleItemVisibility(item, true);
                 } else {
-                    if (item.dataset.category === category) {
-                        item.style.display = 'block';
-                    } else {
-                        item.style.display = 'none';
+                    // Map Romanian categories to English data-category values
+                    let dataCategory = '';
+                    switch(category) {
+                        case 'cladire': dataCategory = 'building'; break;
+                        case 'living': dataCategory = 'living'; break;
+                        case 'dormitor': dataCategory = 'bedroom'; break;
+                        case 'baie': dataCategory = 'bathroom'; break;
+                        case 'intrare': dataCategory = 'entrance'; break;
+                        default: dataCategory = category;
                     }
+                    
+                    toggleItemVisibility(item, item.dataset.category === dataCategory);
                 }
             });
         });
