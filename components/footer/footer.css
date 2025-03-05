@@ -1,7 +1,7 @@
 /* Footer Styles - Simplified Version */
 .footer {
-    background-color: var(--dark-bg);
-    color: var(--light-text);
+    background-color: var(--white);
+    color: var(--text-dark);
     padding: 2rem;
     font-family: var(--body-font);
     position: relative;

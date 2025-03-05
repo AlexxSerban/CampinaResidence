@@ -21,13 +21,52 @@ document.addEventListener('DOMContentLoaded', function() {
     const contactForm = document.getElementById('contactForm');
     const submitBtn = contactForm.querySelector('button[type="submit"]');
     
-    // Dezactivăm butonul inițial
-    submitBtn.disabled = true;
+    // Nu mai dezactivăm butonul inițial
+    submitBtn.disabled = false;
 
     // Form validation
     const inputs = contactForm.querySelectorAll('input, textarea');
     let formIsValid = false;
 
+    // Funcție pentru validarea formularului fără afișarea mesajelor de eroare
+    function checkFormValidity() {
+        let isValid = true;
+        const formData = {};
+
+        inputs.forEach(input => {
+            const field = checkFieldValidity(input);
+            isValid = isValid && field.isValid;
+            formData[input.id] = field.value;
+        });
+
+        formIsValid = isValid;
+        return { isValid, formData };
+    }
+
+    // Funcție pentru validarea unui câmp fără afișarea mesajelor de eroare
+    function checkFieldValidity(field) {
+        let isValid = true;
+
+        // Validare câmp gol
+        if (!field.value.trim()) {
+            isValid = false;
+        }
+        // Validare email
+        else if (field.type === 'email' && !isValidEmail(field.value)) {
+            isValid = false;
+        }
+        // Validare telefon
+        else if (field.id === 'phone' && !isValidPhone(field.value)) {
+            isValid = false;
+        }
+
+        return {
+            isValid: isValid,
+            value: field.value.trim()
+        };
+    }
+
+    // Funcție pentru validarea formularului cu afișarea mesajelor de eroare
     function validateForm() {
         let isValid = true;
         const formData = {};
@@ -38,12 +77,11 @@ document.addEventListener('DOMContentLoaded', function() {
             formData[input.id] = field.value;
         });
 
-        // Actualizăm starea butonului
-        submitBtn.disabled = !isValid;
         formIsValid = isValid;
         return { isValid, formData };
     }
 
+    // Funcție pentru validarea unui câmp cu afișarea mesajelor de eroare
     function validateField(field) {
         const formGroup = field.closest('.form-group');
         let isValid = true;
@@ -87,11 +125,12 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
-    // Adăugăm event listeners pentru validare în timp real
+    // Adăugăm event listeners pentru validare în timp real, dar fără afișarea mesajelor de eroare
     inputs.forEach(input => {
         ['input', 'blur'].forEach(eventType => {
             input.addEventListener(eventType, () => {
-                validateForm();
+                // Doar verificăm validitatea, fără a afișa mesaje de eroare
+                checkFormValidity();
             });
         });
     });
@@ -101,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function() {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Verificăm din nou validarea înainte de trimitere
+            // Validăm formularul și afișăm mesajele de eroare
             const { isValid, formData } = validateForm();
             
             if (!isValid) {
@@ -133,16 +172,21 @@ document.addEventListener('DOMContentLoaded', function() {
                     // Resetăm starea formularului după trimitere
                     inputs.forEach(input => {
                         input.closest('.form-group').classList.remove('success');
+                        input.closest('.form-group').classList.remove('error');
+                        const existingError = input.closest('.form-group').querySelector('.error-message');
+                        if (existingError) {
+                            existingError.remove();
+                        }
                     });
-                    submitBtn.disabled = true;
+                    submitBtn.disabled = false;
                 })
                 .catch(function(error) {
                     console.error('FAILED...', error);
                     showNotification('A apărut o eroare. Vă rugăm să încercați din nou.', 'error');
+                    submitBtn.disabled = false;
                 })
                 .finally(function() {
                     submitBtn.textContent = originalText;
-                    // Butonul rămâne dezactivat după reset până când formularul este din nou valid
                 });
         });
     }

@@ -45,7 +45,7 @@ function getApartmentImages(nrCam) {
             additional: [
                 "../../images/bedroom2.jpg",
                 "../../images/building2.png",
-                "../../images/entranceApartment2.jpg"
+                "../../images/entranceApartment1.jpg"
             ]
         },
         3: {
@@ -61,7 +61,7 @@ function getApartmentImages(nrCam) {
             additional: [
                 "../../images/bedroom4.jpg",
                 "../../images/building4.png",
-                "../../images/entranceApartment2.jpg"
+                "../../images/entranceApartment1.jpg"
             ]
         }
     };
@@ -300,6 +300,15 @@ document.addEventListener('DOMContentLoaded', () => {
             lightbox.style.display = 'none';
         }
     });
+
+    // Adaugă event listener pentru imaginea planului apartamentului
+    const floorPlanImg = document.querySelector('.floor-plan img');
+    if (floorPlanImg) {
+        floorPlanImg.style.cursor = 'pointer';
+        floorPlanImg.addEventListener('click', () => {
+            openLightbox(floorPlanImg.src);
+        });
+    }
 });
 
 // Loan Calculator
@@ -311,6 +320,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const totalPaymentElement = document.getElementById('totalPayment');
     const totalInterestElement = document.getElementById('totalInterest');
     let loanChart = null;
+
+    // Get CSS variables
+    const getComputedStyle = window.getComputedStyle(document.documentElement);
+    const accentColor = getComputedStyle.getPropertyValue('--accent').trim();
+    const primaryColor = getComputedStyle.getPropertyValue('--primary').trim();
 
     // Load Chart.js from CDN
     const script = document.createElement('script');
@@ -326,7 +340,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 labels: ['Suma împrumutată', 'Dobândă totală'],
                 datasets: [{
                     data: [0, 0],
-                    backgroundColor: ['#4CAF50', '#FF5722'],
+                    backgroundColor: [accentColor, primaryColor],
                     borderWidth: 0
                 }]
             },
@@ -378,6 +392,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Update chart
         if (loanChart) {
             loanChart.data.datasets[0].data = [principal, totalInterest];
+            loanChart.data.datasets[0].backgroundColor = [accentColor, primaryColor];
             loanChart.update();
         }
     }

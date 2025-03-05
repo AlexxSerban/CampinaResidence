@@ -15,11 +15,16 @@
     /* Status Colors */
     --success: #4CAF50;
     --danger: #f44336;
+
+    /* Loan Calculator Colors */
+    --loan-amount-color: var(--accent);     /* Culoare pentru Suma imprumutata */
+    --total-interest-color: var(--primary); /* Culoare pentru Dobanda totala */
 }
 
 /* Update existing styles to use new color scheme */
 body {
-    background-color: var(--background);
+    background-color: var(--white);
+    font-family: var(--body-font);
 }
 
 .apartment-hero {
@@ -28,19 +33,23 @@ body {
 
 .hero-content h1 {
     color: var(--primary);
+    font-family: var(--heading-font);
 }
 
 .hero-content .subtitle,
 .hero-content .description {
     color: var(--text-medium);
+    font-family: var(--body-font);
 }
 
 .stat .value {
     color: var(--primary);
+    font-family: var(--body-font);
 }
 
 .stat .label {
     color: var(--text-medium);
+    font-family: var(--body-font);
 }
 
 .cta-button {
@@ -48,6 +57,7 @@ body {
     padding: 1rem 2.5rem;
     text-decoration: none;
     border-radius: 8px;
+    font-family: var(--button-font);
     font-weight: 500;
     transition: all 0.3s ease;
     text-align: center;
@@ -68,23 +78,34 @@ body {
 
 .feature-item h3 {
     color: var(--primary);
+    margin-bottom: 1rem;
+    font-family: var(--heading-font);
 }
 
 .feature-item li {
     color: var(--text-medium);
+    margin-bottom: 0.5rem;
+    font-family: var(--body-font);
 }
 
 .apartment-details-section {
-    background: var(--background);
+    padding: 4rem 5% 2rem;
+    background-color: var(--white);
 }
 
 .details-content h2,
 .technical-details h3 {
     color: var(--primary);
+    margin-bottom: 1.5rem;
+    font-family: var(--heading-font);
 }
 
 .details-content p {
+    font-size: 1.1rem;
+    line-height: 1.7;
     color: var(--text-medium);
+    margin-bottom: 1rem;
+    font-family: var(--body-font);
 }
 
 .spec-item {
@@ -93,53 +114,120 @@ body {
 
 .spec-label {
     color: var(--text-medium);
+    font-weight: 500;
+    font-family: var(--body-font);
 }
 
 .spec-value {
     color: var(--primary);
+    font-weight: 600;
+    font-family: var(--body-font);
 }
 
 .price-card {
     background: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    overflow: hidden;
+    margin-bottom: 0.5rem;
 }
 
 .price-value {
     color: var(--primary);
+    font-size: 2.5rem;
+    font-family: var(--heading-font);
 }
 
 .price-details {
     color: var(--text-medium);
+    margin-bottom: 1.5rem;
+    font-family: var(--body-font);
 }
 
 .price-features .feature {
     color: var(--text-medium);
     border-bottom: 1px solid var(--background);
+    margin-bottom: 0.75rem;
+    font-family: var(--body-font);
 }
 
 .contact-button {
     background: var(--primary);
     color: var(--white);
+    margin-top: 1.5rem;
+    font-family: var(--button-font);
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
 }
 
 .contact-button:hover {
-    background: var(--accent);
+    background: rgba(0, 31, 63, 0.8);  /* var(--primary) with opacity */
+    transform: translateY(-2px);
 }
 
 .phone-button {
     background: var(--accent);
     color: var(--white);
+    margin-top: 1rem;
+    font-family: var(--button-font);
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
 }
 
 .phone-button:hover {
-    background: var(--primary);
+    background: rgba(184, 115, 51, 0.85);  /* var(--accent) with opacity */
+    transform: translateY(-2px);
+}
+
+.phone-button svg {
+    width: 20px;
+    height: 20px;
 }
 
 .floor-plan-section {
-    background: var(--white);
+    padding: 3rem 5%;
+    background-color: var(--white);
 }
 
 .floor-plan-section h2 {
-    color: var(--primary);
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.floor-plan {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.floor-plan img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.floor-plan img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 12px rgba(0,0,0,0.15);
 }
 
 /* Update footer colors */
@@ -196,8 +284,9 @@ body {
 
 /* Apartment Details Page Styles */
 .apartment-details {
-    max-width: 100%;
-    margin: 0 auto;
+    padding-top: 20px;
+    font-family: var(--body-font);
+    background-color: var(--white);
 }
 
 /* Hero Section */
@@ -207,9 +296,8 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
-    padding: 4rem 5%;
-    background: var(--white);
-    margin-top: 0;
+    padding: 2rem 5% 4rem;
+    background-color: var(--white);
 }
 
 .hero-content {
@@ -220,10 +308,11 @@ body {
 }
 
 .hero-content h1 {
-    font-size: 3.5rem;
-    font-weight: 600;
+    font-size: 2.5rem;
+    font-weight: 700;
     margin-bottom: 1rem;
     line-height: 1.2;
+    font-family: var(--heading-font);
 }
 
 .hero-content .subtitle {
@@ -305,6 +394,7 @@ body {
     padding: 1rem 2.5rem;
     text-decoration: none;
     border-radius: 8px;
+    font-family: var(--button-font);
     font-weight: 500;
     transition: all 0.3s ease;
     text-align: center;
@@ -376,7 +466,8 @@ body {
 
 /* Features Section */
 .apartment-features {
-    padding: 5rem 5%;
+    padding: 4rem 5%;
+    background-color: var(--white);
 }
 
 .features-grid {
@@ -419,14 +510,10 @@ body {
 }
 
 /* Details Section */
-.apartment-details-section {
-    padding: 5rem 5%;
-}
-
 .details-grid {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    gap: 3rem;
+    gap: 2rem;
 }
 
 .details-content h2 {
@@ -434,14 +521,9 @@ body {
     margin-bottom: 1.5rem;
 }
 
-.details-content p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-}
-
 .technical-details {
-    margin-top: 3rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .technical-details h3 {
@@ -479,6 +561,7 @@ body {
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     overflow: hidden;
+    margin-bottom: 1rem;
 }
 
 .price-content {
@@ -511,57 +594,6 @@ body {
 
 .price-features .feature:last-child {
     border-bottom: none;
-}
-
-.contact-button, .phone-button {
-    display: block;
-    width: 100%;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    text-align: center;
-    border-radius: 8px;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    text-decoration: none;
-}
-
-.phone-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-}
-
-.phone-button:hover {
-    transform: translateY(-2px);
-}
-
-.phone-button svg {
-    width: 20px;
-    height: 20px;
-}
-
-/* Floor Plan Section */
-.floor-plan-section {
-    padding: 5rem 5%;
-    text-align: center;
-}
-
-.floor-plan-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-}
-
-.floor-plan {
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.floor-plan img {
-    width: 100%;
-    height: auto;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 /* Responsive Design */
@@ -651,6 +683,11 @@ body {
     .floor-plan img {
         max-width: 100%;
         height: auto;
+    }
+
+    .apartment-hero {
+        padding: 1rem 5% 2rem;
+        background-color: var(--white);
     }
 }
 
@@ -793,6 +830,7 @@ body {
     font-size: 2rem;
     color: #333;
     margin-bottom: 1rem;
+    font-family: var(--heading-font);
 }
 
 .apartment-status {
@@ -864,9 +902,10 @@ body {
 .info-section h3 {
     font-size: 1.2rem;
     color: #333;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     border-bottom: 2px solid #ddd;
     padding-bottom: 0.5rem;
+    font-family: var(--heading-font);
 }
 
 .info-grid {
@@ -896,6 +935,8 @@ body {
     font-size: 1.8rem;
     font-weight: 600;
     color: #333;
+    margin-bottom: 0.5rem;
+    font-family: var(--heading-font);
 }
 
 .price-details {
@@ -908,25 +949,11 @@ body {
     margin-top: 2rem;
 }
 
-.contact-button {
-    display: inline-block;
-    background-color: #4CAF50;
-    color: white;
-    padding: 1rem 2rem;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: background-color 0.3s;
-}
-
-.contact-button:hover {
-    background-color: #45a049;
-}
-
 .apartment-description {
     margin-top: 2rem;
     line-height: 1.6;
     color: #666;
+    font-family: var(--body-font);
 }
 
 /* Modal styles */
@@ -1016,14 +1043,12 @@ body {
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    margin-top: 2rem;
+    margin-top: 0;
 }
 
 .loan-calculator h3 {
     margin-bottom: 1.5rem;
-    color: #333;
-    font-size: 1.5rem;
-    text-align: center;
+    font-family: var(--heading-font);
 }
 
 .calculator-inputs {
@@ -1040,9 +1065,8 @@ body {
 }
 
 .input-group label {
-    font-weight: 500;
-    color: #555;
-    white-space: nowrap;
+    margin-bottom: 0.5rem;
+    font-family: var(--body-font);
 }
 
 .input-group input,
@@ -1063,20 +1087,22 @@ body {
 
 .calculate-button {
     grid-column: 1 / -1;
-    background-color: #4CAF50;
+    background-color: var(--accent);
     color: white;
     padding: 1rem;
     border: none;
     border-radius: 5px;
     font-size: 1rem;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s;
     width: 100%;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
+    font-family: var(--button-font);
 }
 
 .calculate-button:hover {
-    background-color: #45a049;
+    background-color: rgba(184, 115, 51, 0.85);  /* var(--accent) with opacity */
+    transform: translateY(-2px);
 }
 
 .results-chart-container {
@@ -1104,11 +1130,13 @@ body {
 .result-label {
     color: #555;
     font-weight: 500;
+    font-family: var(--body-font);
 }
 
 .result-value {
-    font-weight: 600;
+    font-weight: 700;
     color: #333;
+    font-family: var(--heading-font);
 }
 
 /* Stiluri specifice pentru valorile calculatorului */
@@ -1135,6 +1163,50 @@ body {
     justify-content: center;
 }
 
+/* Stiluri pentru graficul donut */
+.loan-chart svg path.loan-amount,
+.loan-chart svg path[data-name="Suma împrumutată"] {
+    fill: var(--accent) !important;
+    stroke: var(--accent) !important;
+}
+
+.loan-chart svg path.total-interest,
+.loan-chart svg path[data-name="Dobânda totală"] {
+    fill: var(--primary) !important;
+    stroke: var(--primary) !important;
+}
+
+/* Stiluri pentru legenda graficului */
+.loan-chart .legend-item[data-name="Suma împrumutată"] .legend-color {
+    background-color: var(--accent) !important;
+}
+
+.loan-chart .legend-item[data-name="Dobânda totală"] .legend-color {
+    background-color: var(--primary) !important;
+}
+
+/* Asigură-te că stilurile sunt aplicate și pentru elementele generate dinamic */
+[class*="recharts-sector"].loan-amount {
+    fill: var(--accent) !important;
+    stroke: var(--accent) !important;
+}
+
+[class*="recharts-sector"].total-interest {
+    fill: var(--primary) !important;
+    stroke: var(--primary) !important;
+}
+
+/* Stiluri pentru elementele din grafic */
+.loan-chart .loan-amount {
+    fill: var(--accent) !important;
+    stroke: var(--accent) !important;
+}
+
+.loan-chart .total-interest {
+    fill: var(--primary) !important;
+    stroke: var(--primary) !important;
+}
+
 @media (max-width: 768px) {
     .calculator-inputs {
         grid-template-columns: 1fr;
@@ -1151,5 +1223,25 @@ body {
     
     .input-group label {
         white-space: normal;
+    }
+}
+
+/* Main container */
+main.apartment-details {
+    background-color: var(--white);
+    margin: 0;
+    padding-top: 20px;
+}
+
+/* Media queries adjustments */
+@media (max-width: 768px) {
+    .apartment-details {
+        padding-top: 20px;
+        background-color: var(--white);
+    }
+    
+    .apartment-hero {
+        padding: 2rem 5%;
+        background-color: var(--white);
     }
 } 

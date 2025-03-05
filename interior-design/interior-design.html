@@ -38,11 +38,11 @@
         
         <div class="gallery-filters" data-aos="fade-up" data-aos-delay="200">
           <button class="filter-button active">Toate</button>
-          <button class="filter-button">Building</button>
+          <button class="filter-button">Clădire</button>
           <button class="filter-button">Living</button>
-          <button class="filter-button">Bedroom</button>
-          <button class="filter-button">Bathroom</button>
-          <button class="filter-button">Entrance</button>
+          <button class="filter-button">Dormitor</button>
+          <button class="filter-button">Baie</button>
+          <button class="filter-button">Intrare</button>
         </div>
 
         <div class="photo-grid">
@@ -181,12 +181,6 @@
               <h3>Intrare Apartament 1</h3>
             </div>
           </div>
-          <div class="photo-item" data-category="entrance" data-aos="fade-up" data-aos-delay="150">
-            <img src="../images/entranceApartment2.jpg" alt="Apartment Entrance 2" />
-            <div class="photo-overlay">
-              <h3>Intrare Apartament 2</h3>
-            </div>
-          </div>
           <div class="photo-item" data-category="entrance" data-aos="fade-up" data-aos-delay="200">
             <img src="../images/entranceBuilding1.jpg" alt="Building Entrance 1" />
             <div class="photo-overlay">
@@ -254,7 +248,18 @@
             if (category === 'toate') {
               item.style.display = 'block';
             } else {
-              if (item.dataset.category === category) {
+              // Map Romanian categories to English data-category values
+              let dataCategory = '';
+              switch(category) {
+                case 'clădire': dataCategory = 'building'; break;
+                case 'living': dataCategory = 'living'; break;
+                case 'dormitor': dataCategory = 'bedroom'; break;
+                case 'baie': dataCategory = 'bathroom'; break;
+                case 'intrare': dataCategory = 'entrance'; break;
+                default: dataCategory = category;
+              }
+              
+              if (item.dataset.category === dataCategory) {
                 item.style.display = 'block';
               } else {
                 item.style.display = 'none';

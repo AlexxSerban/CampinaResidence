@@ -21,6 +21,12 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@400;500;600&family=Baskervville&display=swap');
 
+body {
+    font-family: var(--body-font);
+    background-color: var(--background);
+    color: var(--text-dark);
+}
+
 /* Contact Page Styles */
 .contact-container {
     max-width: 1200px;
@@ -60,6 +66,7 @@
     color: var(--text-medium);
     margin-bottom: 50px;
     line-height: 1.6;
+    font-family: var(--body-font);
 }
 
 .info-items {
@@ -76,6 +83,23 @@
     box-shadow: none;
 }
 
+.info-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(var(--accent-rgb, 195, 130, 100), 0.1);
+}
+
+.info-icon svg {
+    stroke: var(--accent);
+    stroke-width: 2;
+    width: 20px;
+    height: 20px;
+}
+
 .info-content h3 {
     font-size: 1rem;
     color: var(--primary);
@@ -88,6 +112,7 @@
     color: var(--text-medium);
     line-height: 1.5;
     font-size: 0.95rem;
+    font-family: var(--body-font);
 }
 
 /* Contact Form Section */
@@ -98,6 +123,7 @@
     box-shadow: 0 15px 30px rgba(27, 54, 93, 0.1);
     margin-top: 0;
     border: 1px solid rgba(27, 54, 93, 0.08);
+    font-family: var(--body-font);
 }
 
 .form-row {
@@ -114,6 +140,7 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 8px;
+    font-family: var(--body-font);
 }
 
 .form-group input,
@@ -194,6 +221,7 @@
     color: #94A3B8;
     opacity: 0.7;
     font-size: 0.95rem;
+    font-family: var(--body-font);
 }
 
 /* Error state styling */
@@ -204,6 +232,19 @@
 
 .form-group.error label {
     color: #EF4444;
+}
+
+.error-message {
+    color: #EF4444;
+    font-size: 0.85rem;
+    margin-top: 6px;
+    font-family: var(--body-font);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* Success state styling */
@@ -283,11 +324,13 @@
     font-size: 3.5rem;
     font-weight: 600;
     margin-bottom: 15px;
+    font-family: var(--heading-font);
 }
 
 .header-content p {
     font-size: 1.2rem;
     opacity: 0.9;
+    font-family: var(--body-font);
 }
 
 @media (max-width: 768px) {
