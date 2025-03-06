@@ -29,10 +29,14 @@ body {
 /* Apartments Header Styles */
 .apartments-header {
     position: relative;
-    padding: 160px 0 120px; /* Increased top padding to account for navbar height */
+    padding: 160px 0 120px;
     text-align: center;
     overflow: hidden;
-    z-index: 1; /* Ensure proper stacking context */
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .header-container {
@@ -45,22 +49,25 @@ body {
     grid-template-columns: 0.9fr 1.1fr;
     gap: 40px;
     align-items: center;
+    width: 100%;
 }
 
 .mega-title {
     font-size: 3.5rem;
     line-height: 1.2;
     margin-bottom: 24px;
-    color: #2c3e50;
+    color: var(--text-dark);
     font-weight: 600;
     font-family: var(--heading-font);
+    text-align: left;
 }
 
 .header-description {
     font-size: 1.25rem;
     line-height: 1.6;
-    color: #666;
+    color: var(--text-medium);
     margin-bottom: 32px;
+    text-align: left;
 }
 
 .header-stats {
@@ -68,6 +75,7 @@ body {
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
     margin-top: 40px;
+    width: 100%;
 }
 
 .stat-item {
@@ -120,21 +128,24 @@ body {
 /* Buildings Section Styles */
 .buildings-section {
     padding: 60px 0;
+    width: 100%;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    width: 100%;
 }
 
 .building-category {
     margin-bottom: 80px;
+    width: 100%;
 }
 
 .building-category h2 {
     font-size: 2.5rem;
-    color: #1a1a1a;
+    color: var(--text-dark);
     margin-bottom: 40px;
     text-align: center;
     position: relative;
@@ -159,6 +170,7 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
     margin-top: 40px;
+    width: 100%;
 }
 
 .apartment-card {
@@ -167,6 +179,7 @@ body {
     overflow: hidden;
     box-shadow: 0 4px 12px var(--shadow);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
 }
 
 .apartment-card:hover {
@@ -261,34 +274,149 @@ body {
 
 @media (max-width: 768px) {
     .apartments-header {
-        padding: 100px 0 40px; /* Adjusted padding for mobile */
+        padding: 100px 0 40px;
+        width: 100vw;
+    }
+
+    .header-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        width: calc(100% - 30px);
+        max-width: 600px;
+        padding: 0;
+        margin: 0 auto;
     }
 
     .mega-title {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        text-align: center;
+        padding: 0;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .header-description {
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+        text-align: center;
+        padding: 0;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .header-stats {
         grid-template-columns: 1fr;
-        gap: 16px;
+        gap: 15px;
+        margin-top: 30px;
+        padding: 0;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .stat-item {
+        padding: 15px;
+        margin: 0 auto;
+        width: calc(100% - 30px);
+        max-width: 300px;
     }
 
     .header-image {height: 400px;}
+
+    .buildings-section {
+        padding: 40px 0;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container {
+        width: calc(100% - 30px);
+        max-width: 600px;
+        padding: 0;
+        margin: 0 auto;
+    }
+
+    .building-category {
+        margin-bottom: 60px;
+        width: 100%;
+    }
+
+    .building-category h2 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    .apartment-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin-top: 30px;
+        padding: 0;
+        width: 100%;
+    }
+
+    .apartment-card {
+        width: 100%;
+        margin: 0 auto;
+    }
 }
 
 @media (max-width: 480px) {
     .apartments-header {
-        padding: 90px 0 30px; /* Further adjusted padding for smaller devices */
+        padding: 90px 0 30px;
+    }
+
+    .header-container {
+        width: calc(100% - 20px);
+        padding: 0;
     }
 
     .mega-title {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
 
-    .header-description {font-size: 1rem;}
+    .header-description {
+        font-size: 1rem;
+    }
+
+    .header-stats {
+        width: 100%;
+    }
+
+    .stat-item {
+        width: calc(100% - 20px);
+        max-width: 280px;
+        padding: 12px;
+    }
 
     .header-image {
         height: 300px;
+    }
+
+    .buildings-section {
+        padding: 30px 0;
+    }
+
+    .container {
+        width: calc(100% - 20px);
+    }
+
+    .building-category {
+        margin-bottom: 40px;
+    }
+
+    .building-category h2 {
+        font-size: 1.8rem;
+        margin-bottom: 25px;
+    }
+
+    .apartment-grid {
+        gap: 15px;
+        margin-top: 25px;
     }
 }
 

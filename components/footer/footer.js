@@ -167,8 +167,8 @@ function loadFooter() {
                         
                         <div class="footer-legal-section">
                             <div class="footer-nav footer-legal-links">
-                                <a href="${baseUrl}/cookies.html" class="footer-nav-link">Cookies</a>
-                                <a href="${baseUrl}/privacy.html" class="footer-nav-link">Confidențialitate</a>
+                                <a href="${baseUrl}/privacy/cookies.html" class="footer-nav-link">Cookies</a>
+                                <a href="${baseUrl}/privacy/privacy.html" class="footer-nav-link">Confidențialitate</a>
                             </div>
                             
                             <div class="footer-legal-images">
@@ -185,22 +185,16 @@ function loadFooter() {
                 
                 <!-- Copyright la baza footer-ului -->
                 <div class="footer-bottom">
-                    <p class="copyright">© 2025 CAMPINA RESIDENCE. Toate drepturile rezervate. Toate materialele publicate in acest site sunt cu titlu informativ si sunt supuse modificarilor fara notificari prealabile si nu reprezinta o oferta comerciala concreta.</p>
+                    <p class="copyright">© ${new Date().getFullYear()} CAMPINA RESIDENCE. Toate drepturile rezervate. Toate materialele publicate in acest site sunt cu titlu informativ si sunt supuse modificarilor fara notificari prealabile si nu reprezinta o oferta comerciala concreta.</p>
                 </div>
             </div>
         </footer>
         `;
         
-        // Insert the footer HTML directly
         footerPlaceholder.innerHTML = footerHTML;
-        console.log('Footer injected directly');
         
-        // Initialize the footer functionality
-        setTimeout(function() {
-            initFooter();
-            ensureFooterVisibility();
-            console.log('Footer initialized after direct injection');
-        }, 100);
+        // Initialize footer functionality
+        initFooter();
     }
 }
 
