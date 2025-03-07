@@ -2923,17 +2923,25 @@ label {
     font-size: 1.5rem;
     color: var(--accent);
     transition: transform 0.3s ease;
+    display: inline-block;
+    margin-left: 1rem;
 }
 
 .faq-answer {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease-out;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease-out;
     padding-right: 2rem;
+    margin: 0;
+    padding-left: 0;
 }
 
 .faq-item.active .faq-answer {
-    max-height: 500px;
+    max-height: 1000px;
+    opacity: 1;
+    transform: translateY(0);
     padding-bottom: 1.5rem;
 }
 
@@ -2950,6 +2958,7 @@ label {
 .faq-answer ul {
     list-style: none;
     padding-left: 0;
+    margin: 0;
 }
 
 .faq-answer li {
@@ -2957,6 +2966,14 @@ label {
     padding: 0.5rem 0;
     padding-left: 1.5rem;
     position: relative;
+    opacity: 0;
+    transform: translateY(-5px);
+    transition: all 0.3s ease-out;
+}
+
+.faq-item.active .faq-answer li {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .faq-answer li::before {

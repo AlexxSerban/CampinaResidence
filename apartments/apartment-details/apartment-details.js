@@ -4,25 +4,58 @@ import { apartmentsC1, apartmentsC2 } from '../apartments.js';
 function getUrlParams() {
     const params = new URLSearchParams(window.location.search);
     return {
-        id: params.get('id')
+        id: params.get('id'),
+        corp: params.get('corp')  // Adăugăm parametrul corp
     };
 }
 
-// Funcție pentru a găsi apartamentul după ID
-function findApartmentById(id) {
-    // Caută în toate categoriile din C1
-    for (const category of Object.values(apartmentsC1)) {
-        if (typeof category === 'object') {
-            const found = Object.values(category).find(apt => apt.id === id);
-            if (found) return found;
-        }
-    }
+// Funcție pentru a găsi apartamentul după ID și corp
+function findApartmentById(id, corp) {
+    console.log('Searching for apartment with ID:', id, 'in Corp:', corp);
     
-    // Caută în toate categoriile din C2
-    for (const category of Object.values(apartmentsC2)) {
-        if (typeof category === 'object') {
-            const found = Object.values(category).find(apt => apt.id === id);
-            if (found) return found;
+    // Dacă avem specificat corpul, căutăm doar în corpul respectiv
+    if (corp === 'C1') {
+        for (const category of Object.values(apartmentsC1)) {
+            if (typeof category === 'object') {
+                const found = Object.values(category).find(apt => apt.id === id);
+                if (found) {
+                    console.log('Found apartment in C1:', found);
+                    return found;
+                }
+            }
+        }
+    } else if (corp === 'C2') {
+        for (const category of Object.values(apartmentsC2)) {
+            if (typeof category === 'object') {
+                const found = Object.values(category).find(apt => apt.id === id);
+                if (found) {
+                    console.log('Found apartment in C2:', found);
+                    return found;
+                }
+            }
+        }
+    } else {
+        // Dacă nu avem corp specificat, căutăm în ambele (comportament de fallback)
+        // Întâi în C1
+        for (const category of Object.values(apartmentsC1)) {
+            if (typeof category === 'object') {
+                const found = Object.values(category).find(apt => apt.id === id);
+                if (found) {
+                    console.log('Found apartment in C1 (fallback):', found);
+                    return found;
+                }
+            }
+        }
+        
+        // Apoi în C2
+        for (const category of Object.values(apartmentsC2)) {
+            if (typeof category === 'object') {
+                const found = Object.values(category).find(apt => apt.id === id);
+                if (found) {
+                    console.log('Found apartment in C2 (fallback):', found);
+                    return found;
+                }
+            }
         }
     }
     
@@ -77,7 +110,7 @@ async function loadApartmentDetails() {
         const urlParams = getUrlParams();
         console.log('URL params:', urlParams);
         
-        const apartment = findApartmentById(urlParams.id);
+        const apartment = findApartmentById(urlParams.id, urlParams.corp);
         console.log('Found apartment:', apartment);
         
         if (!apartment) {

@@ -201,37 +201,72 @@ document.addEventListener('DOMContentLoaded', function() {
     // Auto advance slides every 5 seconds
     setInterval(nextSlide, 5000);
 
-    // FAQ Accordion
-    const faqItems = document.querySelectorAll('.faq-item');
-    
-    faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
-        const answer = item.querySelector('.faq-answer');
+    // FAQ Accordion functionality
+    function initializeFAQItems() {
+        console.log('Initializing FAQ functionality...');
+        const faqItems = document.querySelectorAll('.faq-item');
         
-        question.addEventListener('click', () => {
-            const isOpen = item.classList.contains('active');
-            
-            // Close all other items
-            faqItems.forEach(otherItem => {
-                if (otherItem !== item) {
-                    otherItem.classList.remove('active');
-                    otherItem.querySelector('.faq-answer').style.maxHeight = null;
+        if (faqItems.length > 0) {
+            console.log(`Found ${faqItems.length} FAQ items`);
+            faqItems.forEach((item, index) => {
+                const question = item.querySelector('.faq-question');
+                const answer = item.querySelector('.faq-answer');
+                
+                if (question && answer) {
+                    console.log(`Adding click handler to FAQ item #${index + 1}`);
+                    
+                    // Eliminăm eventualele handlere existente pentru a evita duplicarea
+                    const newQuestion = question.cloneNode(true);
+                    question.parentNode.replaceChild(newQuestion, question);
+                    
+                    // Adăugăm noul event listener
+                    newQuestion.addEventListener('click', function(event) {
+                        console.log(`FAQ question #${index + 1} clicked`);
+                        event.preventDefault();
+                        
+                        // Verificăm dacă acest element este deja activ
+                        const isActive = item.classList.contains('active');
+                        console.log(`Is currently active: ${isActive}`);
+                        
+                        // Închidem toate răspunsurile
+                        faqItems.forEach(faqItem => {
+                            faqItem.classList.remove('active');
+                        });
+                        
+                        // Dacă elementul nu era activ, îl activăm
+                        if (!isActive) {
+                            item.classList.add('active');
+                            console.log(`Activated FAQ item #${index + 1}`);
+                        }
+                    });
+                } else {
+                    console.warn(`FAQ item #${index + 1} missing question or answer elements`);
                 }
             });
-            
-            // Toggle current item
-            item.classList.toggle('active');
-            
-            if (!isOpen) {
-                answer.style.maxHeight = answer.scrollHeight + 'px';
-            } else {
-                answer.style.maxHeight = null;
-            }
-        });
+        } else {
+            console.warn('No FAQ items found on page');
+        }
+    }
+    
+    // Asigurăm inițializarea FAQ după încărcarea completă a DOM-ului
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('DOM fully loaded, initializing FAQ items');
+        initializeFAQItems();
     });
-
+    
     // Initialize first slide
     updateSlider();
+    
+    // Dacă DOM-ul este deja încărcat, inițializăm imediat
+    if (document.readyState === 'complete' || document.readyState === 'interactive') {
+        console.log('Document already loaded, initializing FAQ items immediately');
+        setTimeout(initializeFAQItems, 100);
+    } else {
+        window.addEventListener('load', function() {
+            console.log('Window loaded, checking FAQ functionality again...');
+            setTimeout(initializeFAQItems, 1000);
+        });
+    }
 
     // Mobile menu functionality
     // Get the mobile menu button and nav links

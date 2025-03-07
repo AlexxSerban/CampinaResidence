@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <span class="price">${apartment.pret.standard.toLocaleString()} €</span>
                         <span class="price-details">plus TVA ${apartment.pret.tva}%</span>
                     </div>
-                    <a href="../apartment-details/apartment-details.html?id=${apartment.id}" class="view-details-btn">Vezi detalii complete</a>
+                    <a href="../apartment-details/apartment-details.html?id=${apartment.id}&corp=${apartment.cladire}" class="view-details-btn">Vezi detalii complete</a>
                 </div>
             </div>
         `;
