@@ -2627,20 +2627,29 @@ label {
 }
 
 .prequalify-button {
-    margin-top: 40px;
-    padding: 16px 32px;
-    background: var(--accent);
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 18px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    white-space: nowrap;
-    text-decoration: none;
     display: inline-block;
+    padding: 1rem 2rem;
+    background: var(--accent);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
     font-family: var(--body-font);
+    transition: all 0.3s ease;
+    text-align: center;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .prequalify-button {
+        width: 100%;
+        max-width: 300px;
+        display: block;
+        text-align: center;
+        padding: 1rem 1rem;
+        margin: 0 auto;
+    }
 }
 
 .prequalify-button:hover {

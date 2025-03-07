@@ -348,7 +348,9 @@ body {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 50px;
-    color: var(--text-dark);
+    color: var(--white);
+    font-family: var(--heading-font);
+    font-weight: 600;
 }
 
 .video-grid {
@@ -802,4 +804,13 @@ body {
     .stat-number {
         font-size: 2.5rem;
     }
+}
+
+.explore-section h2 {
+    color: var(--white);
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-family: var(--heading-font);
+    font-weight: 600;
+    text-align: center;
 } 
