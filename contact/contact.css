@@ -42,6 +42,7 @@ body {
     grid-template-columns: 1fr 1.2fr;
     gap: 100px;
     align-items: start;
+    font-family: var(--body-font);
 }
 
 /* Contact Info Section */
@@ -50,6 +51,7 @@ body {
     border-radius: 0;
     box-shadow: none;
     background: transparent;
+    font-family: var(--body-font);
 }
 
 .contact-info h1 {
@@ -72,6 +74,7 @@ body {
 .info-items {
     display: grid;
     gap: 40px;
+    font-family: var(--body-font);
 }
 
 .info-item {
@@ -81,6 +84,7 @@ body {
     padding: 0;
     background: transparent;
     box-shadow: none;
+    font-family: var(--body-font);
 }
 
 .info-icon {
@@ -333,7 +337,10 @@ body {
 
 .header-content p {
     font-size: 1.2rem;
-    opacity: 0.9;
+    color: var(--text-medium);
+    margin-bottom: 2rem;
+    max-width: 600px;
+    line-height: 1.6;
     font-family: var(--body-font);
 }
 

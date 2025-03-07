@@ -8,6 +8,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@400;500;600&family=Baskervville&display=swap');
 
 :root {
+    /* Main Colors - New Color Scheme */
+    --primary: #1B365D;    /* Dark Blue - 25% usage */
+    --accent: #C38264;     /* Cupru - 10% usage */
+    --neutral: #2C3E50;    /* Text Color - 10% usage */
+    --background: #F5F5F5; /* Light Gray - 55% usage */
+    --accent-hover: #E8AA89; /* Cupru deschis - pentru hover */
+    
+    /* Derived Colors */
+    --text-dark: var(--neutral);
+    --text-medium: rgba(44, 62, 80, 0.7);
+    --white: #FFFFFF;
+    --shadow: rgba(27, 54, 93, 0.1);
+    
     /* Typography */
     --heading-font: 'Playfair Display', serif;
     --body-font: 'Montserrat Medium', 'Montserrat', sans-serif;
@@ -214,10 +227,10 @@ body {
     font-size: 3.5rem;
     line-height: 1.2;
     margin-bottom: 30px;
-    color: var(--text-dark);
+    color: var(--primary);
     font-weight: 700;
     letter-spacing: -0.02em;
-    font-family: var(--heading-font);
+    font-family: 'Playfair Display', serif;
 }
 
 .header-content .highlight {
@@ -251,7 +264,7 @@ body {
     transition: all 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     white-space: nowrap;
-    font-family: var(--button-font);
+    font-family: var(--body-font);
 }
 
 .social-button:hover {
@@ -272,6 +285,7 @@ body {
 .social-button span {
     font-size: 0.95rem;
     color: white;
+    font-family: var(--body-font);
 }
 
 /* Stiluri specifice pentru fiecare platformă */

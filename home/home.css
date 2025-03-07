@@ -98,7 +98,7 @@ h2 {
     font-weight: 500;
     font-size: 34px;
     letter-spacing: 0.004em;
-    color: var(--text-color);
+    color: var(--primary);
     position: relative;
     padding-bottom: 20px;
 }
@@ -991,6 +991,7 @@ label {
     color: var(--white);
     border: none;
     width: 250px;
+    font-family: var(--body-font);
 }
 
 .cta-button:hover {
@@ -1242,6 +1243,7 @@ label {
     background-color: var(--accent);
     padding: 0.5rem 1rem;
     border-radius: 6px;
+    font-family: var(--body-font);
 }
 
 .advantage-link:hover {
@@ -2272,6 +2274,7 @@ label {
     font-weight: 500;
     cursor: pointer;
     transition: all 0.3s ease;
+    font-family: var(--body-font);
 }
 
 .submit-button:hover {
@@ -2637,6 +2640,7 @@ label {
     white-space: nowrap;
     text-decoration: none;
     display: inline-block;
+    font-family: var(--body-font);
 }
 
 .prequalify-button:hover {
@@ -3222,12 +3226,13 @@ label {
     display: inline-block;
     padding: 12px 24px;
     background: var(--accent);
-    color: var(--primary);
+    color: var(--white);
     text-decoration: none;
     border-radius: 8px;
     transition: all 0.3s ease;
     border: none;
     font-weight: 500;
+    font-family: var(--body-font);
 }
 
 .view-details:hover {

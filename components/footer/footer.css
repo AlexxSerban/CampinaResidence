@@ -111,14 +111,17 @@
 }
 
 .footer-nav-horizontal {
+    display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
+    flex-wrap: nowrap;
+    gap: 2rem;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
 }
 
 .footer-legal-section {
-    margin-top: 1rem;
+    margin-top: 4.5rem;
 }
 
 .footer-legal-links {
@@ -203,7 +206,8 @@
     transition: all 0.3s ease;
     position: relative;
     padding: 0.25rem 0;
-    font-family: var(--button-font);
+    font-family: var(--body-font);
+    white-space: nowrap;
 }
 
 .footer-nav-horizontal .footer-nav-link:hover {
@@ -292,7 +296,7 @@
 /* Responsive Design */
 @media (max-width: 768px) {
     .footer {
-        padding: 1.5rem 1rem;
+        padding: 3rem 1rem;
     }
     
     .footer-columns {
@@ -305,14 +309,13 @@
     }
     
     .footer-branding {
-        align-items: center;
         text-align: center;
+        align-items: center;
     }
     
     .footer-nav-combined {
         align-items: center;
-        margin-top: 2rem;
-        top: 1rem;
+        text-align: center;
     }
     
     .footer-nav {
@@ -320,11 +323,16 @@
     }
     
     .footer-nav-horizontal {
-        justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, auto);
         gap: 1rem;
+        width: 100%;
+        padding: 0 1rem;
     }
     
     .footer-legal-links {
+        flex-direction: row;
         justify-content: center;
     }
     
@@ -342,48 +350,46 @@
     }
     
     .footer-logo {
-        height: 40px;
-        margin-bottom: 1rem;
+        max-width: 180px;
+        margin: 0 auto;
     }
     
     .footer-text {
-        font-size: 0.8rem;
-        margin-bottom: 1rem;
         text-align: center;
+        max-width: 100%;
     }
     
     .footer-nav-link {
-        font-size: 0.8rem;
+        text-align: center;
+        padding: 0.5rem;
+        font-size: 0.9rem;
     }
     
     .footer-nav-horizontal .footer-nav-link:hover,
     .footer-legal-links .footer-nav-link:hover {
-        transform: translateY(-2px);
+        transform: none;
     }
     
     .footer-legal-image-link {
-        max-width: 100px;
+        margin: 0 1rem;
     }
     
     .footer-legal-image {
-        max-height: 50px;
+        max-width: 120px;
     }
     
     .footer-legal-image-text {
-        font-size: 0.7rem;
+        font-size: 0.8rem;
     }
     
     .social-links {
-        gap: 0.8rem;
         justify-content: center;
+        margin-top: 1.5rem;
     }
     
     .social-link {
         width: 40px;
         height: 40px;
-        background-color: var(--accent);
-        color: white;
-        opacity: 0.9;
     }
     
     .social-link svg {
@@ -392,27 +398,26 @@
     }
     
     .copyright {
-        font-size: 0.75rem;
+        text-align: center;
+        font-size: 0.8rem;
     }
     
     .footer-legal-images {
-        justify-content: center;
-        gap: 2rem;
+        flex-direction: row;
+        gap: 1rem;
     }
     
     .footer-legal-image-link {
-        max-width: 180px;
+        flex: 0 1 auto;
     }
     
     .footer-legal-image-link:hover::after {
-        top: -5px;
-        right: -5px;
-        width: 20px;
-        height: 20px;
-        font-size: 12px;
+        font-size: 0.7rem;
+        padding: 0.3rem 0.6rem;
+        bottom: -2.5rem;
     }
     
     .footer-legal-image {
-        max-height: 110px;
+        max-width: 100px;
     }
 } 

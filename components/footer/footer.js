@@ -158,11 +158,11 @@ function loadFooter() {
                     <div class="footer-column footer-nav-combined">
                         <div class="footer-nav footer-nav-horizontal">
                             <a href="${baseUrl}/home/home.html" class="footer-nav-link">Acasă</a>
-                            <a href="${baseUrl}/apartments/apartments.html" class="footer-nav-link">Apartamente</a>
                             <a href="${baseUrl}/finishes/finishes.html" class="footer-nav-link">Finisaje</a>
+                            <a href="${baseUrl}/apartments/apartments.html" class="footer-nav-link">Apartamente</a>
                             <a href="${baseUrl}/interior-design/interior-design.html" class="footer-nav-link">Design Interior</a>
-                            <a href="${baseUrl}/project.html" class="footer-nav-link">Proiect</a>
                             <a href="${baseUrl}/contact/contact.html" class="footer-nav-link">Contact</a>
+                            <a href="${baseUrl}/social-media/social-media.html" class="footer-nav-link">Social Media</a>
                         </div>
                         
                         <div class="footer-legal-section">
