@@ -5,7 +5,7 @@
 /* Color Variables */
 :root {
     /* Main Colors - New Color Scheme */
-    --primary: #1B365D;    /* Dark Blue - 25% usage */
+    --primary: #006D77;    /* Dark Blue - 25% usage */
     --accent: #C38264;     /* Cupru - 10% usage */
     --accent-rgb: 195, 130, 100; /* RGB values for accent color */
     --neutral: #2C3E50;    /* Text Color - 10% usage */

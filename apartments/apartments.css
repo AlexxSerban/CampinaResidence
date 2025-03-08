@@ -1,7 +1,7 @@
 /* Color Variables */
 :root {
     /* Main Colors - New Color Scheme */
-    --primary: #1B365D;    /* Dark Blue - 25% usage */
+    --primary: #006D77;    /* Dark Blue - 25% usage */
     --accent: #C38264;     /* Cupru - 10% usage */
     --neutral: #2C3E50;    /* Text Color - 10% usage */
     --background: #F5F5F5; /* Light Gray - 55% usage */
@@ -56,10 +56,14 @@ body {
     font-size: 3.5rem;
     line-height: 1.2;
     margin-bottom: 24px;
-    color: var(--text-dark);
+    color: var(--primary);
     font-weight: 600;
     font-family: var(--heading-font);
     text-align: left;
+}
+
+.mega-title .accent-text {
+    color: var(--accent);
 }
 
 .header-description {
@@ -92,7 +96,7 @@ body {
     display: block;
     font-size: 2.5rem;
     font-weight: 600;
-    color: #2c3e50;
+    color: var(--primary);
     margin-bottom: 8px;
     font-family: var(--heading-font);
 }
@@ -145,7 +149,7 @@ body {
 
 .building-category h2 {
     font-size: 2.5rem;
-    color: var(--text-dark);
+    color: var(--primary);
     margin-bottom: 40px;
     text-align: center;
     position: relative;
